@@ -1,0 +1,300 @@
+WARNING - 2025-10-03 19:25:11 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2492.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-03 19:25:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-03 19:25:11 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-10-03 19:25:12 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2492.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-03 19:25:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-03 19:25:12 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-10-03 19:25:12 --> mysqli_sql_exception: Unknown column 'agent_commission.total_commission' in 'field list' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `users`....', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`....')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`....')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `users`....', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Datatable_m.php(56): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\pro1\app\Controllers\User_c.php(2139): App\Models\Datatable_m->get_datatables('users', Array, Array, Array, 'user_list_ajax_...')
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\User_c->user_list_ajax()
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-10-03 19:25:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'agent_commission.total_commission' in 'field list'
+[Method: POST, Route: user-list-ajax]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `users`.*, IFNULL(SUM(agent_commission.total_commission), 0) as total_commission
+FROM `users`
+LEFT JOIN `agent_commission` ON `agent_commission`.`refUser_id` = `users`.`id`
+WHERE `users`.`user_type` = :users.user_type:
+AND `users`.`refAgent_id` = :users.refAgent_id:
+GROUP BY `users`.`id`
+ORDER BY `users`.`id` DESC
+ LIMIT 20', [...], false)
+ 2 APPPATH\Models\Datatable_m.php(56): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\User_c.php(2139): App\Models\Datatable_m->get_datatables('users', [...], [...], [...], 'user_list_ajax_user')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User_c->user_list_ajax()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-03 19:25:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'agent_commission.total_commission' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`.*, IFNULL(SUM(agent_commission.total_commission), 0) as total_commission
+FROM `users`
+LEFT JOIN `agent_commission` ON `agent_commission`.`refUser_id` = `users`.`id`
+WHERE `users`.`user_type` = \'user\'
+AND `users`.`refAgent_id` = \'1\'
+GROUP BY `users`.`id`
+ORDER BY `users`.`id` DESC
+ LIMIT 20')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`.*, IFNULL(SUM(agent_commission.total_commission), 0) as total_commission
+FROM `users`
+LEFT JOIN `agent_commission` ON `agent_commission`.`refUser_id` = `users`.`id`
+WHERE `users`.`user_type` = \'user\'
+AND `users`.`refAgent_id` = \'1\'
+GROUP BY `users`.`id`
+ORDER BY `users`.`id` DESC
+ LIMIT 20')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `users`.*, IFNULL(SUM(agent_commission.total_commission), 0) as total_commission
+FROM `users`
+LEFT JOIN `agent_commission` ON `agent_commission`.`refUser_id` = `users`.`id`
+WHERE `users`.`user_type` = :users.user_type:
+AND `users`.`refAgent_id` = :users.refAgent_id:
+GROUP BY `users`.`id`
+ORDER BY `users`.`id` DESC
+ LIMIT 20', [...], false)
+ 4 APPPATH\Models\Datatable_m.php(56): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\User_c.php(2139): App\Models\Datatable_m->get_datatables('users', [...], [...], [...], 'user_list_ajax_user')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User_c->user_list_ajax()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-03 19:25:12 --> [Caused by] mysqli_sql_exception: Unknown column 'agent_commission.total_commission' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `users`.*, IFNULL(SUM(agent_commission.total_commission), 0) as total_commission
+FROM `users`
+LEFT JOIN `agent_commission` ON `agent_commission`.`refUser_id` = `users`.`id`
+WHERE `users`.`user_type` = \'user\'
+AND `users`.`refAgent_id` = \'1\'
+GROUP BY `users`.`id`
+ORDER BY `users`.`id` DESC
+ LIMIT 20', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`.*, IFNULL(SUM(agent_commission.total_commission), 0) as total_commission
+FROM `users`
+LEFT JOIN `agent_commission` ON `agent_commission`.`refUser_id` = `users`.`id`
+WHERE `users`.`user_type` = \'user\'
+AND `users`.`refAgent_id` = \'1\'
+GROUP BY `users`.`id`
+ORDER BY `users`.`id` DESC
+ LIMIT 20')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`.*, IFNULL(SUM(agent_commission.total_commission), 0) as total_commission
+FROM `users`
+LEFT JOIN `agent_commission` ON `agent_commission`.`refUser_id` = `users`.`id`
+WHERE `users`.`user_type` = \'user\'
+AND `users`.`refAgent_id` = \'1\'
+GROUP BY `users`.`id`
+ORDER BY `users`.`id` DESC
+ LIMIT 20')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `users`.*, IFNULL(SUM(agent_commission.total_commission), 0) as total_commission
+FROM `users`
+LEFT JOIN `agent_commission` ON `agent_commission`.`refUser_id` = `users`.`id`
+WHERE `users`.`user_type` = :users.user_type:
+AND `users`.`refAgent_id` = :users.refAgent_id:
+GROUP BY `users`.`id`
+ORDER BY `users`.`id` DESC
+ LIMIT 20', [...], false)
+ 5 APPPATH\Models\Datatable_m.php(56): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\User_c.php(2139): App\Models\Datatable_m->get_datatables('users', [...], [...], [...], 'user_list_ajax_user')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User_c->user_list_ajax()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-03 19:25:35 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2492.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-03 19:25:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-03 19:25:35 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-10-03 19:25:36 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2492.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-03 19:25:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-03 19:25:36 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-10-03 19:25:36 --> mysqli_sql_exception: Duplicate column name 'total_commission' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Datatable_m.php(65): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\laragon\www\pro1\app\Controllers\User_c.php(2159): App\Models\Datatable_m->count_filtered('users', Array, Array, Array, 'user_list_ajax_...')
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\User_c->user_list_ajax()
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-10-03 19:25:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate column name 'total_commission'
+[Method: POST, Route: user-list-ajax]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM (
+SELECT `users`.*, IFNULL(SUM(agent_commission.commission), 0) as total_commission
+FROM `users`
+LEFT JOIN `agent_commission` ON `agent_commission`.`refUser_id` = `users`.`id`
+WHERE `users`.`user_type` = :users.user_type:
+AND `users`.`refAgent_id` = :users.refAgent_id:
+GROUP BY `users`.`id`
+) CI_count_all_results', [...], false)
+ 2 APPPATH\Models\Datatable_m.php(65): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Controllers\User_c.php(2159): App\Models\Datatable_m->count_filtered('users', [...], [...], [...], 'user_list_ajax_user')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User_c->user_list_ajax()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-03 19:25:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate column name 'total_commission'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM (
+SELECT `users`.*, IFNULL(SUM(agent_commission.commission), 0) as total_commission
+FROM `users`
+LEFT JOIN `agent_commission` ON `agent_commission`.`refUser_id` = `users`.`id`
+WHERE `users`.`user_type` = \'user\'
+AND `users`.`refAgent_id` = \'1\'
+GROUP BY `users`.`id`
+) CI_count_all_results')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM (
+SELECT `users`.*, IFNULL(SUM(agent_commission.commission), 0) as total_commission
+FROM `users`
+LEFT JOIN `agent_commission` ON `agent_commission`.`refUser_id` = `users`.`id`
+WHERE `users`.`user_type` = \'user\'
+AND `users`.`refAgent_id` = \'1\'
+GROUP BY `users`.`id`
+) CI_count_all_results')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM (
+SELECT `users`.*, IFNULL(SUM(agent_commission.commission), 0) as total_commission
+FROM `users`
+LEFT JOIN `agent_commission` ON `agent_commission`.`refUser_id` = `users`.`id`
+WHERE `users`.`user_type` = :users.user_type:
+AND `users`.`refAgent_id` = :users.refAgent_id:
+GROUP BY `users`.`id`
+) CI_count_all_results', [...], false)
+ 4 APPPATH\Models\Datatable_m.php(65): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Controllers\User_c.php(2159): App\Models\Datatable_m->count_filtered('users', [...], [...], [...], 'user_list_ajax_user')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User_c->user_list_ajax()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-03 19:25:36 --> [Caused by] mysqli_sql_exception: Duplicate column name 'total_commission'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM (
+SELECT `users`.*, IFNULL(SUM(agent_commission.commission), 0) as total_commission
+FROM `users`
+LEFT JOIN `agent_commission` ON `agent_commission`.`refUser_id` = `users`.`id`
+WHERE `users`.`user_type` = \'user\'
+AND `users`.`refAgent_id` = \'1\'
+GROUP BY `users`.`id`
+) CI_count_all_results', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM (
+SELECT `users`.*, IFNULL(SUM(agent_commission.commission), 0) as total_commission
+FROM `users`
+LEFT JOIN `agent_commission` ON `agent_commission`.`refUser_id` = `users`.`id`
+WHERE `users`.`user_type` = \'user\'
+AND `users`.`refAgent_id` = \'1\'
+GROUP BY `users`.`id`
+) CI_count_all_results')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM (
+SELECT `users`.*, IFNULL(SUM(agent_commission.commission), 0) as total_commission
+FROM `users`
+LEFT JOIN `agent_commission` ON `agent_commission`.`refUser_id` = `users`.`id`
+WHERE `users`.`user_type` = \'user\'
+AND `users`.`refAgent_id` = \'1\'
+GROUP BY `users`.`id`
+) CI_count_all_results')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM (
+SELECT `users`.*, IFNULL(SUM(agent_commission.commission), 0) as total_commission
+FROM `users`
+LEFT JOIN `agent_commission` ON `agent_commission`.`refUser_id` = `users`.`id`
+WHERE `users`.`user_type` = :users.user_type:
+AND `users`.`refAgent_id` = :users.refAgent_id:
+GROUP BY `users`.`id`
+) CI_count_all_results', [...], false)
+ 5 APPPATH\Models\Datatable_m.php(65): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Controllers\User_c.php(2159): App\Models\Datatable_m->count_filtered('users', [...], [...], [...], 'user_list_ajax_user')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User_c->user_list_ajax()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-03 19:25:50 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2492.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-03 19:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-03 19:25:50 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-10-03 19:25:51 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2492.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-03 19:25:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-03 19:25:51 --> Session: Sessions is enabled, and one exists. Please don't $session->start();

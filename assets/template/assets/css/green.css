@@ -1,0 +1,293 @@
+.bg-primary {
+  background: linear-gradient(to right, #ff0077, #F042FF, #6a11cb) !important;
+  border: none !important;
+}
+.bg-dark {
+  background: linear-gradient(to right, #ff8e00, #ff8e00) !important;
+  border: none !important;
+}
+.bg-danger {
+  background: linear-gradient(to right, #9A073C, #d67e9e) !important;
+  border: none !important;
+}
+.bg-warning {
+  background: linear-gradient(to right, #6200ff, #9A073C) !important;
+  border: none !important;
+}
+.bg-info {
+  background: linear-gradient(to right, #61346B, #e295f3) !important;
+  border: none !important;
+}
+.bg-success {
+  background: linear-gradient(to right, #312051, #F0C38E) !important;
+  border: none !important;
+}
+
+.bg-primary-single {
+  background: #ff0077 !important;
+  border: none !important;
+}
+.bg-dark-single {
+  background: #F0C38E !important;
+  border: none !important;
+}
+.bg-dark-2-single {
+  background: #ff8e00 !important;
+  border: none !important;
+}
+.bg-danger-single {
+  background: #9A073C !important;
+  border: none !important;
+}
+.bg-warning-single {
+  background: #6200ff !important;
+  border: none !important;
+}
+.bg-info-single {
+  background:#61346B !important;
+  border: none !important;
+}
+.bg-success-single {
+  background: #312051 !important;
+  border: none !important;
+}
+
+.text-primary {
+  color: #ff0077 !important;
+}
+.text-dark {
+  color: #ff8e00 !important;
+}
+.text-danger {
+  color: #9A073C !important;
+}
+.text-warning {
+  color: #6200ff  !important;
+}
+.text-info {
+  color: #61346B !important;
+}
+.text-success {
+  color: #688E74 !important;
+}
+
+/* primary color */
+.nk-menu-link:hover,
+.active > .nk-menu-link {
+  color: #ff0077 !important;
+}
+.nk-menu-link:hover .nk-menu-icon,
+.nk-menu-item.active > .nk-menu-link .nk-menu-icon,
+.nk-menu-item.current-menu > .nk-menu-link .nk-menu-icon {
+  color: #ff0077 !important;
+}
+.dropdown-menu-s1 {
+  border-top: 3px solid #ff0077 !important;
+}
+.list-checked li:before {
+  color: #ff0077 !important;
+  content: "\e9b9";
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #ff0077, #F042FF, #6a11cb) !important;
+  border: none !important;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  border: none !important;
+  background: linear-gradient(to right, #ff0077, #F042FF, #6a11cb) !important;
+}
+.form-control:focus,
+.dual-listbox .dual-listbox__search:focus,
+div.dataTables_wrapper div.dataTables_filter input:focus {
+  color: #3c4d62;
+  background-color: #fff;
+  border: none !important;
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(101, 118, 255, 0.1);
+}
+.form-check-input:focus {
+  border: none !important;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(85, 155, 251, 0.25);
+}
+.form-check-input:checked {
+  background: linear-gradient(to right, #ff0077, #F042FF, #6a11cb) !important;
+  border: none !important;
+}
+.custom-btn-check input:checked ~ label {
+  color: #fff;
+  border: none !important;
+  background: linear-gradient(to right, #ff0077, #F042FF, #6a11cb) !important;
+}
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+  border: none !important;
+}
+.form-file-input:focus ~ .form-file-label {
+  border: none !important;
+  box-shadow: 0 0 0 3px rgba(101, 118, 255, 0.1);
+}
+.link-primary {
+  color: #ff0077 !important;
+}
+
+/* yantra css */
+/* .base-timer {
+  position: relative;
+  width: 100%;
+}
+
+.base-timer__svg {
+  transform: scaleX(1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: white;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.arc {
+  color: #ff0077 !important;
+}
+
+.base-timer__label {
+  position: relative;
+  width: 0px;
+  height: 0px;
+  top: -1.6rem;
+  right: -50%;
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  color: white;
+  justify-content: center !important;
+} */
+
+/* svg {
+  height: 60%;
+  max-height: 60% !important;
+  max-width: 60% !important;
+} */
+
+
+.timer {  
+  color: #9A073C;
+}
+
+#timeDisplay {
+  font-size: 2em;
+  color: #9A073C;
+  font-weight: bold;
+}
+
+.progress-bar{
+  background-color: #9A073C !important;
+}
+
+.input-form-game-div img {
+  width: 40%;
+}
+
+.yantra-game-dashboard-img {
+  justify-content: center !important;
+  align-items: center !important;
+  padding-right: unset !important;  
+}
+.yantra-game-dashboard-content {
+  justify-content: center !important;
+  align-items: center !important;
+  padding-left: unset !important;  
+}
+.yantra-game-dashboard-content h4 {
+  padding: unset !important;
+  margin: unset !important;
+  padding-top: 10px !important;
+  line-height: 0.5;
+}
+.yantra-game-dashboard-content .span-minute {
+  font-weight: bold;
+  font-size: 20px;
+  padding: unset !important;
+  margin: unset !important;
+  line-height: 1.5 !important;
+}
+.yantra-game-dashboard-content .span-minute-title {
+  font-weight: bold;
+  font-size: 14px;
+  padding: unset !important;
+  margin: unset !important;
+  line-height: 0 !important;
+}
+
+/* Change the placeholder text color */
+.all_game_section::placeholder {
+  color: #ffffff !important; /* Replace with your desired color */
+  font-size: 12px;
+}
+.all_game_section {
+  border-radius: unset !important;
+  border-bottom-left-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+}
+.remove-border-radious {
+  border-radius: unset !important;
+}
+
+.input-form-game-div {
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0px 6px 0px 6px !important;
+}
+.input-form-game-div .card {
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.svg-height {
+  height: unset !important;
+}
+
+#last_20_game_data td {
+  text-align: center;
+  vertical-align: middle;
+}
+#last_20_game_data th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.custom-lh{
+  line-height: 1.1 !important;
+}
+
+#overlay {
+  background: #101924;
+  color: #666666;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 5000;
+  top: 0;
+  left: 0;
+  float: left;
+  text-align: center;
+  padding-top: 55%;
+  opacity: .80;
+}
+/* timer css end */

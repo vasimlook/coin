@@ -1,0 +1,202 @@
+INFO - 2025-09-29 21:42:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 21:42:29 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-29 21:42:29 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '), 'imb_webhook', '2025-09-29 21:42:29')' at line 1 in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `lo...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `lo...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `lo...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `lo...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Admin_m.php(740): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\laragon\www\pro1\app\Helpers\functions_helper.php(730): App\Models\Admin_m->insert_log(Array)
+#6 C:\laragon\www\pro1\app\Controllers\Login_c.php(771): create_log(1, 'admin', Array, 'imb_webhook')
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Login_c->imb_webhook()
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login_c))
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-29 21:42:29 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '), 'imb_webhook', '2025-09-29 21:42:29')' at line 1
+[Method: GET, Route: imb-webhook]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `log` (`admin_id`, `type`, `message`, `log_type`, `datetime`) VALUES (:admin_id:, :type:, :message:, :log_type:, :datetime:)', [...], false)
+ 2 APPPATH\Models\Admin_m.php(740): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Helpers\functions_helper.php(730): App\Models\Admin_m->insert_log([...])
+ 4 APPPATH\Controllers\Login_c.php(771): create_log(1, 'admin', [], 'imb_webhook')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login_c->imb_webhook()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login_c))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 21:42:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '), 'imb_webhook', '2025-09-29 21:42:29')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `log` (`admin_id`, `type`, `message`, `log_type`, `datetime`) VALUES (1, \'admin\', (), \'imb_webhook\', \'2025-09-29 21:42:29\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `log` (`admin_id`, `type`, `message`, `log_type`, `datetime`) VALUES (1, \'admin\', (), \'imb_webhook\', \'2025-09-29 21:42:29\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `log` (`admin_id`, `type`, `message`, `log_type`, `datetime`) VALUES (:admin_id:, :type:, :message:, :log_type:, :datetime:)', [...], false)
+ 4 APPPATH\Models\Admin_m.php(740): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Helpers\functions_helper.php(730): App\Models\Admin_m->insert_log([...])
+ 6 APPPATH\Controllers\Login_c.php(771): create_log(1, 'admin', [], 'imb_webhook')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login_c->imb_webhook()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 21:42:29 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '), 'imb_webhook', '2025-09-29 21:42:29')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `log` (`admin_id`, `type`, `message`, `log_type`, `datetime`) VALUES (1, \'admin\', (), \'imb_webhook\', \'2025-09-29 21:42:29\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `log` (`admin_id`, `type`, `message`, `log_type`, `datetime`) VALUES (1, \'admin\', (), \'imb_webhook\', \'2025-09-29 21:42:29\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `log` (`admin_id`, `type`, `message`, `log_type`, `datetime`) VALUES (1, \'admin\', (), \'imb_webhook\', \'2025-09-29 21:42:29\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `log` (`admin_id`, `type`, `message`, `log_type`, `datetime`) VALUES (:admin_id:, :type:, :message:, :log_type:, :datetime:)', [...], false)
+ 5 APPPATH\Models\Admin_m.php(740): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Helpers\functions_helper.php(730): App\Models\Admin_m->insert_log([...])
+ 7 APPPATH\Controllers\Login_c.php(771): create_log(1, 'admin', [], 'imb_webhook')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login_c->imb_webhook()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login_c))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-29 22:23:26 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2492.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-29 22:23:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:23:26 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+CRITICAL - 2025-09-29 22:23:26 --> ValueError: array_rand(): Argument #1 ($array) cannot be empty
+[Method: POST, Route: topup-online]
+in APPPATH\Controllers\User_c.php on line 1000.
+ 1 APPPATH\Controllers\User_c.php(1000): array_rand([])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User_c->topup_online()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-29 22:23:31 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2492.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-29 22:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:23:31 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-09-29 22:23:32 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2492.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-29 22:23:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:23:32 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:23:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:23:40 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:23:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:23:46 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:23:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:23:47 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:23:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:23:55 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:00 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:01 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:04 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:16 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:16 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:23 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:23 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-09-29 22:24:26 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2492.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-29 22:24:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:26 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-09-29 22:24:26 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2492.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-29 22:24:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:26 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-09-29 22:24:29 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2492.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-29 22:24:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:29 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-09-29 22:24:29 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2492.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-29 22:24:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:29 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:37 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:37 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:41 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:41 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:42 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:42 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:42 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:47 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:48 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:48 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:48 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:49 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-29 22:24:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-29 22:24:49 --> Session: Sessions is enabled, and one exists. Please don't $session->start();

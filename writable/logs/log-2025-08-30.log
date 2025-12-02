@@ -1,0 +1,17 @@
+INFO - 2025-08-30 17:57:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-30 17:57:30 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+CRITICAL - 2025-08-30 17:57:30 --> Error: Undefined constant "ADMIN_WINNER_HISTORY_AJAX_LINK"
+[Method: GET, Route: admin-play-game-history/227/0]
+in APPPATH\Views\admin\js\play_game_history_js.php on line 270.
+ 1 APPPATH\Views\admin\common\footer.php(32): include()
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\pro1\\app\\Views\\admin\\common\\footer.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/common/footer', [], true)
+ 5 APPPATH\Helpers\functions_helper.php(522): view('admin/common/footer', [...])
+ 6 APPPATH\Controllers\Admin_c.php(2638): load_view('admin', 'admin/play_game_history', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->play_game_history('227', '0')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

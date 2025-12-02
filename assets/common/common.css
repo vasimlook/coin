@@ -1,0 +1,87 @@
+.box {
+    box-shadow: 10px 10px 30px rgba(221, 219, 219, 0.3), -10px -10px 30px rgba(0, 0, 0, 0.1); /* 3D shadow effect */    
+}
+
+/* winner css */
+.winners-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    /* Hide overflowing content */
+}
+
+/* Horizontal Scroll Container */
+.winners-container {
+    display: flex;
+    gap: 20px;
+    /* Space between items */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Horizontal Scroll Container */
+.winners-container-2 {
+    display: flex;
+    gap: 20px;
+    /* Space between items */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.winner {
+    flex: 0 0 auto;
+    min-width: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.winner img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* Makes the image circular */
+    object-fit: cover;
+}
+
+.winner span {    
+    font-size: 11px;
+}
+
+.simplebar-content{
+    padding: 0px 0px 48px !important;
+}
+
+.blinking-text {
+    font-weight: bold; /* Font weight */
+    animation: blink 2s infinite; /* Blinking effect */
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; } /* Fully visible */
+    50% { opacity: 0; }      /* Invisible */
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.highlight
+{
+    border: 3px solid #ffa50087;
+    border-radius: 10px;
+    margin: 0px;
+}
+.round-highlight
+{
+    display: inline-block;
+    background-color: #fff;
+    color: red;
+    border-radius: 5%;    
+    height: 24px;
+    text-align: center;    
+    font-size: 14px;
+}

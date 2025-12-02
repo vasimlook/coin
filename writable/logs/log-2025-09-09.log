@@ -1,0 +1,211 @@
+INFO - 2025-09-09 20:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:15:49 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+CRITICAL - 2025-09-09 20:15:49 --> ErrorException: foreach() argument must be of type array|object, null given
+[Method: POST, Route: payment-setting]
+in APPPATH\Views\admin\payment_setting.php on line 69.
+ 1 APPPATH\Views\admin\payment_setting.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\laragon\\www\\pro1\\app\\Views\\admin\\payment_setting.php', 69)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\pro1\\app\\Views\\admin\\payment_setting.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/payment_setting', [], true)
+ 5 APPPATH\Helpers\functions_helper.php(522): view('admin/payment_setting', [...])
+ 6 APPPATH\Controllers\Admin_c.php(1018): load_view('admin', 'admin/payment_setting', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->payment_setting()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-09 20:16:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:16:07 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+CRITICAL - 2025-09-09 20:16:07 --> ErrorException: foreach() argument must be of type array|object, null given
+[Method: GET, Route: payment-setting]
+in APPPATH\Views\admin\payment_setting.php on line 69.
+ 1 APPPATH\Views\admin\payment_setting.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\laragon\\www\\pro1\\app\\Views\\admin\\payment_setting.php', 69)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\pro1\\app\\Views\\admin\\payment_setting.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/payment_setting', [], true)
+ 5 APPPATH\Helpers\functions_helper.php(522): view('admin/payment_setting', [...])
+ 6 APPPATH\Controllers\Admin_c.php(1018): load_view('admin', 'admin/payment_setting', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->payment_setting()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-09 20:16:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:16:31 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:16:40 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-09 20:16:40 --> mysqli_sql_exception: Unknown column 'recharge_type' in 'field list' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `pa...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pa...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pa...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pa...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Admin_m.php(740): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\laragon\www\pro1\app\Controllers\Admin_c.php(1008): App\Models\Admin_m->insert_payment_setting(Array)
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin_c->payment_setting()
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-09 20:16:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'recharge_type' in 'field list'
+[Method: POST, Route: payment-setting]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `payment_settings` (`recharge_type`, `token`, `phone`) VALUES (:recharge_type:, :token:, :phone:)', [...], false)
+ 2 APPPATH\Models\Admin_m.php(740): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Admin_c.php(1008): App\Models\Admin_m->insert_payment_setting([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->payment_setting()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-09 20:16:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'recharge_type' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `payment_settings` (`recharge_type`, `token`, `phone`) VALUES (\'imb\', \'2345678\', \'1234567890\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `payment_settings` (`recharge_type`, `token`, `phone`) VALUES (\'imb\', \'2345678\', \'1234567890\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `payment_settings` (`recharge_type`, `token`, `phone`) VALUES (:recharge_type:, :token:, :phone:)', [...], false)
+ 4 APPPATH\Models\Admin_m.php(740): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Admin_c.php(1008): App\Models\Admin_m->insert_payment_setting([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->payment_setting()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-09 20:16:40 --> [Caused by] mysqli_sql_exception: Unknown column 'recharge_type' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `payment_settings` (`recharge_type`, `token`, `phone`) VALUES (\'imb\', \'2345678\', \'1234567890\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `payment_settings` (`recharge_type`, `token`, `phone`) VALUES (\'imb\', \'2345678\', \'1234567890\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `payment_settings` (`recharge_type`, `token`, `phone`) VALUES (\'imb\', \'2345678\', \'1234567890\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `payment_settings` (`recharge_type`, `token`, `phone`) VALUES (:recharge_type:, :token:, :phone:)', [...], false)
+ 5 APPPATH\Models\Admin_m.php(740): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Admin_c.php(1008): App\Models\Admin_m->insert_payment_setting([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->payment_setting()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-09 20:16:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:16:56 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:17:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:17:01 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:17:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:17:43 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:17:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:17:46 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:17:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:17:47 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+CRITICAL - 2025-09-09 20:17:47 --> ErrorException: Attempt to read property "type" on string
+[Method: GET, Route: payment-setting]
+in APPPATH\Views\admin\payment_setting.php on line 72.
+ 1 APPPATH\Views\admin\payment_setting.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "type" on string', 'C:\\laragon\\www\\pro1\\app\\Views\\admin\\payment_setting.php', 72)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\pro1\\app\\Views\\admin\\payment_setting.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/payment_setting', [], true)
+ 5 APPPATH\Helpers\functions_helper.php(522): view('admin/payment_setting', [...])
+ 6 APPPATH\Controllers\Admin_c.php(1018): load_view('admin', 'admin/payment_setting', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->payment_setting()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-09 20:18:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:18:07 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+CRITICAL - 2025-09-09 20:18:07 --> TypeError: Cannot access offset of type string on string
+[Method: GET, Route: payment-setting]
+in APPPATH\Views\admin\payment_setting.php on line 72.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/payment_setting', [], true)
+ 4 APPPATH\Helpers\functions_helper.php(522): view('admin/payment_setting', [...])
+ 5 APPPATH\Controllers\Admin_c.php(1018): load_view('admin', 'admin/payment_setting', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->payment_setting()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-09 20:18:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:18:20 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:18:33 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:18:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:18:56 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:19:09 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:48:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:48:07 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:53:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:53:29 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:53:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:53:30 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:53:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:53:30 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:54:19 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:54:19 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:54:20 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:54:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:54:21 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:54:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:54:23 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+CRITICAL - 2025-09-09 20:54:23 --> ErrorException: Array to string conversion
+[Method: GET, Route: admin-setting]
+in APPPATH\Views\admin\settings.php on line 121.
+ 1 APPPATH\Views\admin\settings.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\laragon\\www\\pro1\\app\\Views\\admin\\settings.php', 121)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\pro1\\app\\Views\\admin\\settings.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/settings', [], true)
+ 5 APPPATH\Helpers\functions_helper.php(522): view('admin/settings', [...])
+ 6 APPPATH\Controllers\Admin_c.php(967): load_view('admin', 'admin/settings', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->admin_setting()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-09 20:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:54:59 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+CRITICAL - 2025-09-09 20:54:59 --> ParseError: syntax error, unexpected string content "", expecting "-" or identifier or variable or number
+[Method: GET, Route: admin-setting]
+in APPPATH\Views\admin\settings.php on line 121.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/settings', [], true)
+ 3 APPPATH\Helpers\functions_helper.php(522): view('admin/settings', [...])
+ 4 APPPATH\Controllers\Admin_c.php(967): load_view('admin', 'admin/settings', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->admin_setting()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-09 20:55:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:55:21 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:55:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:55:22 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:55:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:55:22 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:55:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:55:22 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:55:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:55:43 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:55:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:55:44 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:56:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:56:23 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:56:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:56:32 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:56:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:56:51 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:56:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:56:57 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-09 20:56:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 20:56:58 --> Session: Sessions is enabled, and one exists. Please don't $session->start();

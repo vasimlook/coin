@@ -1,0 +1,42 @@
+INFO - 2025-06-04 22:44:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-06-04 22:44:52 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-06-04 22:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-06-04 22:45:02 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+CRITICAL - 2025-06-04 22:48:08 --> ParseError: syntax error, unexpected identifier "pfunction", expecting "function" or "const"
+[Method: GET, Route: user-setting]
+in APPPATH\Controllers\User_c.php on line 2266.
+ 1 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 2 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 3 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 4 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-06-04 22:48:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-06-04 22:48:20 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+CRITICAL - 2025-06-04 22:48:20 --> ErrorException: Undefined array key "language"
+[Method: GET, Route: user-setting]
+in APPPATH\Views\user\user_setting.php on line 20.
+ 1 APPPATH\Views\user\user_setting.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "language"', 'C:\\laragon\\www\\pro1\\app\\Views\\user\\user_setting.php', 20)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\pro1\\app\\Views\\user\\user_setting.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user/user_setting', [], true)
+ 5 APPPATH\Helpers\functions_helper.php(521): view('user/user_setting', [...])
+ 6 APPPATH\Controllers\User_c.php(2303): load_view('user', 'user/user_setting', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User_c->user_setting()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-06-04 22:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-06-04 22:48:58 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-06-04 22:50:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-06-04 22:50:08 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-06-04 22:50:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-06-04 22:50:19 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-06-04 22:50:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-06-04 22:50:22 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-06-04 22:50:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-06-04 22:50:26 --> Session: Sessions is enabled, and one exists. Please don't $session->start();

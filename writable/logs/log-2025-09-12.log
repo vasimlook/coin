@@ -1,0 +1,1002 @@
+INFO - 2025-09-12 22:20:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 22:20:37 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-12 22:20:37 --> mysqli_sql_exception: Incorrect DATETIME value: '12-09-2025' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT SUM(digi...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(digi...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(digi...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT SUM(digi...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Admin_m.php(2704): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\pro1\app\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-12 22:20:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATETIME value: '12-09-2025'
+[Method: POST, Route: maharastra-reverse-admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE `digit_entry_date` = :digit_entry_date:
+AND `digit_entry_id` = :digit_entry_id:
+GROUP BY `refUser_id`', [...], false)
+ 2 APPPATH\Models\Admin_m.php(2704): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 22:20:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATETIME value: '12-09-2025'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE `digit_entry_date` = \'12-09-2025\'
+AND `digit_entry_id` = \'226\'
+GROUP BY `refUser_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE `digit_entry_date` = \'12-09-2025\'
+AND `digit_entry_id` = \'226\'
+GROUP BY `refUser_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE `digit_entry_date` = :digit_entry_date:
+AND `digit_entry_id` = :digit_entry_id:
+GROUP BY `refUser_id`', [...], false)
+ 4 APPPATH\Models\Admin_m.php(2704): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 22:20:37 --> [Caused by] mysqli_sql_exception: Incorrect DATETIME value: '12-09-2025'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE `digit_entry_date` = \'12-09-2025\'
+AND `digit_entry_id` = \'226\'
+GROUP BY `refUser_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE `digit_entry_date` = \'12-09-2025\'
+AND `digit_entry_id` = \'226\'
+GROUP BY `refUser_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE `digit_entry_date` = \'12-09-2025\'
+AND `digit_entry_id` = \'226\'
+GROUP BY `refUser_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE `digit_entry_date` = :digit_entry_date:
+AND `digit_entry_id` = :digit_entry_id:
+GROUP BY `refUser_id`', [...], false)
+ 5 APPPATH\Models\Admin_m.php(2704): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 22:21:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 22:21:33 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-12 22:21:33 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''_date') = '12-09-2025'
+AND `digit_entry_id` = '226'
+GROUP BY `refUser_id`' at line 3 in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT SUM(digi...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(digi...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(digi...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT SUM(digi...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Admin_m.php(2704): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\pro1\app\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-12 22:21:33 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''_date') = '12-09-2025'
+AND `digit_entry_id` = '226'
+GROUP BY `refUser_id`' at line 3
+[Method: POST, Route: maharastra-reverse-admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE DATE(digit_entry.\'_date\') = :DATE(digit_entry.\'_date\'):
+AND `digit_entry_id` = :digit_entry_id:
+GROUP BY `refUser_id`', [...], false)
+ 2 APPPATH\Models\Admin_m.php(2704): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 22:21:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''_date') = '12-09-2025'
+AND `digit_entry_id` = '226'
+GROUP BY `refUser_id`' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE DATE(digit_entry.\'_date\') = \'12-09-2025\'
+AND `digit_entry_id` = \'226\'
+GROUP BY `refUser_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE DATE(digit_entry.\'_date\') = \'12-09-2025\'
+AND `digit_entry_id` = \'226\'
+GROUP BY `refUser_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE DATE(digit_entry.\'_date\') = :DATE(digit_entry.\'_date\'):
+AND `digit_entry_id` = :digit_entry_id:
+GROUP BY `refUser_id`', [...], false)
+ 4 APPPATH\Models\Admin_m.php(2704): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 22:21:33 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''_date') = '12-09-2025'
+AND `digit_entry_id` = '226'
+GROUP BY `refUser_id`' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE DATE(digit_entry.\'_date\') = \'12-09-2025\'
+AND `digit_entry_id` = \'226\'
+GROUP BY `refUser_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE DATE(digit_entry.\'_date\') = \'12-09-2025\'
+AND `digit_entry_id` = \'226\'
+GROUP BY `refUser_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE DATE(digit_entry.\'_date\') = \'12-09-2025\'
+AND `digit_entry_id` = \'226\'
+GROUP BY `refUser_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE DATE(digit_entry.\'_date\') = :DATE(digit_entry.\'_date\'):
+AND `digit_entry_id` = :digit_entry_id:
+GROUP BY `refUser_id`', [...], false)
+ 5 APPPATH\Models\Admin_m.php(2704): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 22:22:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 22:22:04 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-12 22:22:04 --> mysqli_sql_exception: Incorrect DATE value: '12-09-2025' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT SUM(digi...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(digi...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(digi...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT SUM(digi...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Admin_m.php(2704): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\pro1\app\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-12 22:22:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '12-09-2025'
+[Method: POST, Route: maharastra-reverse-admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE DATE(digit_entry_date) = :DATE(digit_entry_date):
+AND `digit_entry_id` = :digit_entry_id:
+GROUP BY `refUser_id`', [...], false)
+ 2 APPPATH\Models\Admin_m.php(2704): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 22:22:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '12-09-2025'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE DATE(digit_entry_date) = \'12-09-2025\'
+AND `digit_entry_id` = \'226\'
+GROUP BY `refUser_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE DATE(digit_entry_date) = \'12-09-2025\'
+AND `digit_entry_id` = \'226\'
+GROUP BY `refUser_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE DATE(digit_entry_date) = :DATE(digit_entry_date):
+AND `digit_entry_id` = :digit_entry_id:
+GROUP BY `refUser_id`', [...], false)
+ 4 APPPATH\Models\Admin_m.php(2704): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 22:22:04 --> [Caused by] mysqli_sql_exception: Incorrect DATE value: '12-09-2025'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE DATE(digit_entry_date) = \'12-09-2025\'
+AND `digit_entry_id` = \'226\'
+GROUP BY `refUser_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE DATE(digit_entry_date) = \'12-09-2025\'
+AND `digit_entry_id` = \'226\'
+GROUP BY `refUser_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE DATE(digit_entry_date) = \'12-09-2025\'
+AND `digit_entry_id` = \'226\'
+GROUP BY `refUser_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT SUM(digit_entry_price) as total_amount, `refAgent_id`, `refUser_id`
+FROM `digit_entry`
+WHERE DATE(digit_entry_date) = :DATE(digit_entry_date):
+AND `digit_entry_id` = :digit_entry_id:
+GROUP BY `refUser_id`', [...], false)
+ 5 APPPATH\Models\Admin_m.php(2704): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 22:22:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 22:22:46 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+CRITICAL - 2025-09-12 22:22:46 --> ErrorException: foreach() argument must be of type array|object, null given
+[Method: POST, Route: maharastra-reverse-admin]
+in APPPATH\Controllers\Admin_c.php on line 5488.
+ 1 APPPATH\Controllers\Admin_c.php(5488): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\laragon\\www\\pro1\\app\\Controllers\\Admin_c.php', 5488)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 22:23:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 22:23:09 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-12 22:23:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 22:23:33 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-12 22:24:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 22:24:14 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-12 22:24:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 22:24:19 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-09-12 22:24:57 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2445.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 22:24:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 22:24:57 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-09-12 22:24:59 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2445.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 22:24:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 22:24:59 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+CRITICAL - 2025-09-12 22:25:00 --> ErrorException: Undefined array key 2
+[Method: POST, Route: submit-maharashtra-game]
+in APPPATH\Controllers\User_c.php on line 1353.
+ 1 APPPATH\Controllers\User_c.php(1353): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 2', 'C:\\laragon\\www\\pro1\\app\\Controllers\\User_c.php', 1353)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User_c->submit_game()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-09-12 22:25:02 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2445.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 22:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 22:25:02 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-09-12 22:25:08 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2445.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 22:25:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 22:25:08 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+CRITICAL - 2025-09-12 22:25:08 --> ErrorException: Undefined array key 2
+[Method: POST, Route: submit-maharashtra-game]
+in APPPATH\Controllers\User_c.php on line 1353.
+ 1 APPPATH\Controllers\User_c.php(1353): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 2', 'C:\\laragon\\www\\pro1\\app\\Controllers\\User_c.php', 1353)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User_c->submit_game()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 22:50:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 22:50:02 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-12 22:50:02 --> mysqli_sql_exception: Unknown column 't.total_amount' in 'field list' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('UPDATE `users` ...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `users` ...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `users` ...')
+#3 C:\laragon\www\pro1\app\Models\Admin_m.php(2728): CodeIgniter\Database\BaseConnection->query('UPDATE `users` ...')
+#4 C:\laragon\www\pro1\app\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+#5 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-09-12 22:50:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 't.total_amount' in 'field list'
+[Method: POST, Route: maharastra-reverse-admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 APPPATH\Models\Admin_m.php(2728): CodeIgniter\Database\BaseConnection->query('UPDATE `users` SET `amount` = amount + t.total_amount, `win_amount` = win_amount + t.total_amount')
+ 2 APPPATH\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 22:50:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 't.total_amount' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `users` SET `amount` = amount + t.total_amount, `win_amount` = win_amount + t.total_amount')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `users` SET `amount` = amount + t.total_amount, `win_amount` = win_amount + t.total_amount')
+ 3 APPPATH\Models\Admin_m.php(2728): CodeIgniter\Database\BaseConnection->query('UPDATE `users` SET `amount` = amount + t.total_amount, `win_amount` = win_amount + t.total_amount')
+ 4 APPPATH\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 22:50:02 --> [Caused by] mysqli_sql_exception: Unknown column 't.total_amount' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('UPDATE `users` SET `amount` = amount + t.total_amount, `win_amount` = win_amount + t.total_amount', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `users` SET `amount` = amount + t.total_amount, `win_amount` = win_amount + t.total_amount')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `users` SET `amount` = amount + t.total_amount, `win_amount` = win_amount + t.total_amount')
+ 4 APPPATH\Models\Admin_m.php(2728): CodeIgniter\Database\BaseConnection->query('UPDATE `users` SET `amount` = amount + t.total_amount, `win_amount` = win_amount + t.total_amount')
+ 5 APPPATH\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 22:51:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 22:51:01 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-12 22:51:01 --> mysqli_sql_exception: Unknown column 't.total_amount' in 'field list' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('UPDATE `users` ...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `users` ...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `users` ...')
+#3 C:\laragon\www\pro1\app\Models\Admin_m.php(2728): CodeIgniter\Database\BaseConnection->query('UPDATE `users` ...')
+#4 C:\laragon\www\pro1\app\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+#5 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-09-12 22:51:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 't.total_amount' in 'field list'
+[Method: POST, Route: maharastra-reverse-admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 APPPATH\Models\Admin_m.php(2728): CodeIgniter\Database\BaseConnection->query('UPDATE `users` SET `amount` = amount + t.total_amount, `win_amount` = win_amount + t.total_amount')
+ 2 APPPATH\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 22:51:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 't.total_amount' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `users` SET `amount` = amount + t.total_amount, `win_amount` = win_amount + t.total_amount')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `users` SET `amount` = amount + t.total_amount, `win_amount` = win_amount + t.total_amount')
+ 3 APPPATH\Models\Admin_m.php(2728): CodeIgniter\Database\BaseConnection->query('UPDATE `users` SET `amount` = amount + t.total_amount, `win_amount` = win_amount + t.total_amount')
+ 4 APPPATH\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 22:51:01 --> [Caused by] mysqli_sql_exception: Unknown column 't.total_amount' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('UPDATE `users` SET `amount` = amount + t.total_amount, `win_amount` = win_amount + t.total_amount', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `users` SET `amount` = amount + t.total_amount, `win_amount` = win_amount + t.total_amount')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `users` SET `amount` = amount + t.total_amount, `win_amount` = win_amount + t.total_amount')
+ 4 APPPATH\Models\Admin_m.php(2728): CodeIgniter\Database\BaseConnection->query('UPDATE `users` SET `amount` = amount + t.total_amount, `win_amount` = win_amount + t.total_amount')
+ 5 APPPATH\Controllers\Admin_c.php(5481): App\Models\Admin_m->get_game_details('digit_entry', '226')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_mh_game()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 22:51:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 22:51:26 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-12 23:14:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 23:14:51 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-12 23:14:51 --> mysqli_sql_exception: Unknown column 'delhi_digit_entry_price' in 'field list' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('\r\n            U...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('\r\n            U...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n            U...')
+#3 C:\laragon\www\pro1\app\Models\Admin_m.php(2753): CodeIgniter\Database\BaseConnection->query('\r\n            U...')
+#4 C:\laragon\www\pro1\app\Controllers\Admin_c.php(5505): App\Models\Admin_m->update_game_details_delhi('delhi_digit_ent...', '3')
+#5 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_delhi_game()
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-09-12 23:14:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'delhi_digit_entry_price' in 'field list'
+[Method: POST, Route: delhi-reverse-admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 APPPATH\Models\Admin_m.php(2753): CodeIgniter\Database\BaseConnection->query('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM(delhi_digit_entry_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE(delhi_digit_entry_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 2 APPPATH\Controllers\Admin_c.php(5505): App\Models\Admin_m->update_game_details_delhi('delhi_digit_entry', '3')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_delhi_game()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 23:14:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'delhi_digit_entry_price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM(delhi_digit_entry_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE(delhi_digit_entry_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM(delhi_digit_entry_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE(delhi_digit_entry_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 3 APPPATH\Models\Admin_m.php(2753): CodeIgniter\Database\BaseConnection->query('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM(delhi_digit_entry_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE(delhi_digit_entry_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 4 APPPATH\Controllers\Admin_c.php(5505): App\Models\Admin_m->update_game_details_delhi('delhi_digit_entry', '3')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_delhi_game()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 23:14:51 --> [Caused by] mysqli_sql_exception: Unknown column 'delhi_digit_entry_price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM(delhi_digit_entry_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE(delhi_digit_entry_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM(delhi_digit_entry_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE(delhi_digit_entry_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM(delhi_digit_entry_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE(delhi_digit_entry_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 4 APPPATH\Models\Admin_m.php(2753): CodeIgniter\Database\BaseConnection->query('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM(delhi_digit_entry_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE(delhi_digit_entry_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 5 APPPATH\Controllers\Admin_c.php(5505): App\Models\Admin_m->update_game_details_delhi('delhi_digit_entry', '3')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_delhi_game()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 23:15:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 23:15:50 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-12 23:15:50 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({str_replace('delhi_' at line 2 in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('\r\n            U...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('\r\n            U...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n            U...')
+#3 C:\laragon\www\pro1\app\Models\Admin_m.php(2753): CodeIgniter\Database\BaseConnection->query('\r\n            U...')
+#4 C:\laragon\www\pro1\app\Controllers\Admin_c.php(5505): App\Models\Admin_m->update_game_details_delhi('delhi_digit_ent...', '3')
+#5 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_delhi_game()
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-09-12 23:15:50 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({str_replace('delhi_' at line 2
+[Method: POST, Route: delhi-reverse-admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 APPPATH\Models\Admin_m.php(2753): CodeIgniter\Database\BaseConnection->query('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM({str_replace(\'delhi_\', \'\', delhi_digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({str_replace(\'delhi_\',\'\',delhi_digit_entry)}_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 2 APPPATH\Controllers\Admin_c.php(5505): App\Models\Admin_m->update_game_details_delhi('delhi_digit_entry', '3')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_delhi_game()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 23:15:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({str_replace('delhi_' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM({str_replace(\'delhi_\', \'\', delhi_digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({str_replace(\'delhi_\',\'\',delhi_digit_entry)}_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM({str_replace(\'delhi_\', \'\', delhi_digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({str_replace(\'delhi_\',\'\',delhi_digit_entry)}_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 3 APPPATH\Models\Admin_m.php(2753): CodeIgniter\Database\BaseConnection->query('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM({str_replace(\'delhi_\', \'\', delhi_digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({str_replace(\'delhi_\',\'\',delhi_digit_entry)}_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 4 APPPATH\Controllers\Admin_c.php(5505): App\Models\Admin_m->update_game_details_delhi('delhi_digit_entry', '3')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_delhi_game()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 23:15:50 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({str_replace('delhi_' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM({str_replace(\'delhi_\', \'\', delhi_digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({str_replace(\'delhi_\',\'\',delhi_digit_entry)}_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM({str_replace(\'delhi_\', \'\', delhi_digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({str_replace(\'delhi_\',\'\',delhi_digit_entry)}_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM({str_replace(\'delhi_\', \'\', delhi_digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({str_replace(\'delhi_\',\'\',delhi_digit_entry)}_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 4 APPPATH\Models\Admin_m.php(2753): CodeIgniter\Database\BaseConnection->query('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM({str_replace(\'delhi_\', \'\', delhi_digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({str_replace(\'delhi_\',\'\',delhi_digit_entry)}_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 5 APPPATH\Controllers\Admin_c.php(5505): App\Models\Admin_m->update_game_details_delhi('delhi_digit_entry', '3')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_delhi_game()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 23:16:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 23:16:24 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-12 23:16:24 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({(digi' at line 2 in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('\r\n            U...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('\r\n            U...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n            U...')
+#3 C:\laragon\www\pro1\app\Models\Admin_m.php(2754): CodeIgniter\Database\BaseConnection->query('\r\n            U...')
+#4 C:\laragon\www\pro1\app\Controllers\Admin_c.php(5505): App\Models\Admin_m->update_game_details_delhi('delhi_digit_ent...', '3')
+#5 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_delhi_game()
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-09-12 23:16:24 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({(digi' at line 2
+[Method: POST, Route: delhi-reverse-admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 APPPATH\Models\Admin_m.php(2754): CodeIgniter\Database\BaseConnection->query('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM({(digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({(digit_entry)}_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 2 APPPATH\Controllers\Admin_c.php(5505): App\Models\Admin_m->update_game_details_delhi('delhi_digit_entry', '3')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_delhi_game()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 23:16:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({(digi' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM({(digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({(digit_entry)}_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM({(digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({(digit_entry)}_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 3 APPPATH\Models\Admin_m.php(2754): CodeIgniter\Database\BaseConnection->query('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM({(digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({(digit_entry)}_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 4 APPPATH\Controllers\Admin_c.php(5505): App\Models\Admin_m->update_game_details_delhi('delhi_digit_entry', '3')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_delhi_game()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 23:16:24 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({(digi' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM({(digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({(digit_entry)}_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM({(digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({(digit_entry)}_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM({(digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({(digit_entry)}_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 4 APPPATH\Models\Admin_m.php(2754): CodeIgniter\Database\BaseConnection->query('
+            UPDATE users u
+            INNER JOIN (SELECT `refUser_id`, SUM({(digit_entry)}_price) AS total_amount
+FROM `delhi_digit_entry`
+WHERE DATE({(digit_entry)}_date) = \'2025-09-12\'
+AND `refMarket_id` = \'3\'
+GROUP BY `refUser_id`) t ON u.id = t.refUser_id
+            SET 
+                u.amount = u.amount + t.total_amount,
+                u.win_amount = u.win_amount + t.total_amount
+        ')
+ 5 APPPATH\Controllers\Admin_c.php(5505): App\Models\Admin_m->update_game_details_delhi('delhi_digit_entry', '3')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_delhi_game()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 23:16:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 23:16:50 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-12 23:16:50 --> mysqli_sql_exception: Unknown column 'delhi_digit_entry_date' in 'where clause' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `de...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `de...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `de...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `de...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Admin_m.php(2762): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\laragon\www\pro1\app\Controllers\Admin_c.php(5508): App\Models\Admin_m->reverse_game_details_delhi('delhi_digit_ent...', '3')
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_delhi_game()
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-12 23:16:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'delhi_digit_entry_date' in 'where clause'
+[Method: POST, Route: delhi-reverse-admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `delhi_digit_entry`
+WHERE `refMarket_id` = :refMarket_id:
+AND DATE(delhi_digit_entry_date) = :DATE(delhi_digit_entry_date):', [...], false)
+ 2 APPPATH\Models\Admin_m.php(2762): CodeIgniter\Database\BaseBuilder->delete()
+ 3 APPPATH\Controllers\Admin_c.php(5508): App\Models\Admin_m->reverse_game_details_delhi('delhi_digit_entry', '3')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_delhi_game()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 23:16:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'delhi_digit_entry_date' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `delhi_digit_entry`
+WHERE `refMarket_id` = \'3\'
+AND DATE(delhi_digit_entry_date) = \'2025-09-12\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `delhi_digit_entry`
+WHERE `refMarket_id` = \'3\'
+AND DATE(delhi_digit_entry_date) = \'2025-09-12\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `delhi_digit_entry`
+WHERE `refMarket_id` = :refMarket_id:
+AND DATE(delhi_digit_entry_date) = :DATE(delhi_digit_entry_date):', [...], false)
+ 4 APPPATH\Models\Admin_m.php(2762): CodeIgniter\Database\BaseBuilder->delete()
+ 5 APPPATH\Controllers\Admin_c.php(5508): App\Models\Admin_m->reverse_game_details_delhi('delhi_digit_entry', '3')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_delhi_game()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-12 23:16:50 --> [Caused by] mysqli_sql_exception: Unknown column 'delhi_digit_entry_date' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `delhi_digit_entry`
+WHERE `refMarket_id` = \'3\'
+AND DATE(delhi_digit_entry_date) = \'2025-09-12\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `delhi_digit_entry`
+WHERE `refMarket_id` = \'3\'
+AND DATE(delhi_digit_entry_date) = \'2025-09-12\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `delhi_digit_entry`
+WHERE `refMarket_id` = \'3\'
+AND DATE(delhi_digit_entry_date) = \'2025-09-12\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `delhi_digit_entry`
+WHERE `refMarket_id` = :refMarket_id:
+AND DATE(delhi_digit_entry_date) = :DATE(delhi_digit_entry_date):', [...], false)
+ 5 APPPATH\Models\Admin_m.php(2762): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Admin_c.php(5508): App\Models\Admin_m->reverse_game_details_delhi('delhi_digit_entry', '3')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->reverse_delhi_game()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 23:17:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 23:17:23 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-12 23:17:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 23:17:25 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-09-12 23:17:38 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2445.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 23:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 23:17:38 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-09-12 23:18:00 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2445.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 23:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 23:18:00 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-12 23:18:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 23:18:05 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-09-12 23:18:08 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2445.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-12 23:18:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 23:18:08 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-12 23:18:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 23:18:42 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-12 23:18:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 23:18:44 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-12 23:19:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 23:19:00 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-12 23:19:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 23:19:08 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-12 23:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-12 23:19:10 --> Session: Sessions is enabled, and one exists. Please don't $session->start();

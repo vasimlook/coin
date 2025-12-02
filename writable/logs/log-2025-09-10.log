@@ -1,0 +1,368 @@
+INFO - 2025-09-10 20:56:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 20:56:01 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 20:56:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 20:56:04 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 20:56:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 20:56:04 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-10 20:56:04 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND digit_entry_type = 'OPEN', (digit_entry_price * rate), 0)) as total_open_sho' at line 1 in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COALESCE...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COALESCE...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COALESCE...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT COALESCE...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Admin_m.php(1762): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\pro1\app\Controllers\Admin_c.php(2648): App\Models\Admin_m->get_mh_total_bid('digit_entry', '226', '0')
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin_c->play_game_history('226', '0')
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-10 20:56:04 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND digit_entry_type = 'OPEN', (digit_entry_price * rate), 0)) as total_open_sho' at line 1
+[Method: POST, Route: admin-play-game-history/226/0]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT COALESCE(SUM(digit_entry_price), 0) as total_digit_entry_price, SUM(IF(win_status = 1, (digit_entry_price * rate), 0)) as total_digit_entry_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_win_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_bid_amount, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_bid_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_digit_entry_price, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_digit_entry_price, SUM(IF(digit_entry_num =  AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_show_winner_amount, SUM(IF(digit_entry_num =  AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_show_winner_amount
+FROM `digit_entry`
+WHERE `refMarket_id` = :refMarket_id:
+AND `slot_id` = :slot_id:
+AND DATE(digit_entry_date) = :DATE(digit_entry_date):', [...], false)
+ 2 APPPATH\Models\Admin_m.php(1762): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin_c.php(2648): App\Models\Admin_m->get_mh_total_bid('digit_entry', '226', '0')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->play_game_history('226', '0')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 20:56:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND digit_entry_type = 'OPEN', (digit_entry_price * rate), 0)) as total_open_sho' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COALESCE(SUM(digit_entry_price), 0) as total_digit_entry_price, SUM(IF(win_status = 1, (digit_entry_price * rate), 0)) as total_digit_entry_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_win_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_bid_amount, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_bid_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_digit_entry_price, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_digit_entry_price, SUM(IF(digit_entry_num =  AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_show_winner_amount, SUM(IF(digit_entry_num =  AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_show_winner_amount
+FROM `digit_entry`
+WHERE `refMarket_id` = \'226\'
+AND `slot_id` = \'0\'
+AND DATE(digit_entry_date) = \'2025-09-10\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COALESCE(SUM(digit_entry_price), 0) as total_digit_entry_price, SUM(IF(win_status = 1, (digit_entry_price * rate), 0)) as total_digit_entry_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_win_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_bid_amount, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_bid_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_digit_entry_price, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_digit_entry_price, SUM(IF(digit_entry_num =  AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_show_winner_amount, SUM(IF(digit_entry_num =  AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_show_winner_amount
+FROM `digit_entry`
+WHERE `refMarket_id` = \'226\'
+AND `slot_id` = \'0\'
+AND DATE(digit_entry_date) = \'2025-09-10\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT COALESCE(SUM(digit_entry_price), 0) as total_digit_entry_price, SUM(IF(win_status = 1, (digit_entry_price * rate), 0)) as total_digit_entry_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_win_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_bid_amount, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_bid_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_digit_entry_price, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_digit_entry_price, SUM(IF(digit_entry_num =  AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_show_winner_amount, SUM(IF(digit_entry_num =  AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_show_winner_amount
+FROM `digit_entry`
+WHERE `refMarket_id` = :refMarket_id:
+AND `slot_id` = :slot_id:
+AND DATE(digit_entry_date) = :DATE(digit_entry_date):', [...], false)
+ 4 APPPATH\Models\Admin_m.php(1762): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Admin_c.php(2648): App\Models\Admin_m->get_mh_total_bid('digit_entry', '226', '0')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->play_game_history('226', '0')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 20:56:04 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND digit_entry_type = 'OPEN', (digit_entry_price * rate), 0)) as total_open_sho' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COALESCE(SUM(digit_entry_price), 0) as total_digit_entry_price, SUM(IF(win_status = 1, (digit_entry_price * rate), 0)) as total_digit_entry_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_win_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_bid_amount, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_bid_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_digit_entry_price, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_digit_entry_price, SUM(IF(digit_entry_num =  AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_show_winner_amount, SUM(IF(digit_entry_num =  AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_show_winner_amount
+FROM `digit_entry`
+WHERE `refMarket_id` = \'226\'
+AND `slot_id` = \'0\'
+AND DATE(digit_entry_date) = \'2025-09-10\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COALESCE(SUM(digit_entry_price), 0) as total_digit_entry_price, SUM(IF(win_status = 1, (digit_entry_price * rate), 0)) as total_digit_entry_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_win_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_bid_amount, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_bid_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_digit_entry_price, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_digit_entry_price, SUM(IF(digit_entry_num =  AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_show_winner_amount, SUM(IF(digit_entry_num =  AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_show_winner_amount
+FROM `digit_entry`
+WHERE `refMarket_id` = \'226\'
+AND `slot_id` = \'0\'
+AND DATE(digit_entry_date) = \'2025-09-10\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COALESCE(SUM(digit_entry_price), 0) as total_digit_entry_price, SUM(IF(win_status = 1, (digit_entry_price * rate), 0)) as total_digit_entry_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_win_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_bid_amount, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_bid_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_digit_entry_price, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_digit_entry_price, SUM(IF(digit_entry_num =  AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_show_winner_amount, SUM(IF(digit_entry_num =  AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_show_winner_amount
+FROM `digit_entry`
+WHERE `refMarket_id` = \'226\'
+AND `slot_id` = \'0\'
+AND DATE(digit_entry_date) = \'2025-09-10\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT COALESCE(SUM(digit_entry_price), 0) as total_digit_entry_price, SUM(IF(win_status = 1, (digit_entry_price * rate), 0)) as total_digit_entry_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_win_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_bid_amount, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_bid_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_digit_entry_price, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_digit_entry_price, SUM(IF(digit_entry_num =  AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_show_winner_amount, SUM(IF(digit_entry_num =  AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_show_winner_amount
+FROM `digit_entry`
+WHERE `refMarket_id` = :refMarket_id:
+AND `slot_id` = :slot_id:
+AND DATE(digit_entry_date) = :DATE(digit_entry_date):', [...], false)
+ 5 APPPATH\Models\Admin_m.php(1762): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Admin_c.php(2648): App\Models\Admin_m->get_mh_total_bid('digit_entry', '226', '0')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->play_game_history('226', '0')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-10 20:57:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 20:57:24 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 20:57:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 20:57:25 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-10 20:57:25 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND digit_entry_type = 'OPEN', (digit_entry_price * rate), 0)) as total_open_sho' at line 1 in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COALESCE...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COALESCE...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COALESCE...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT COALESCE...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Admin_m.php(1762): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\pro1\app\Controllers\Admin_c.php(2648): App\Models\Admin_m->get_mh_total_bid('digit_entry', '226', '0')
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin_c->play_game_history('226', '0')
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-10 20:57:25 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND digit_entry_type = 'OPEN', (digit_entry_price * rate), 0)) as total_open_sho' at line 1
+[Method: POST, Route: admin-play-game-history/226/0]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT COALESCE(SUM(digit_entry_price), 0) as total_digit_entry_price, SUM(IF(win_status = 1, (digit_entry_price * rate), 0)) as total_digit_entry_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_win_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_bid_amount, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_bid_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_digit_entry_price, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_digit_entry_price, SUM(IF(digit_entry_num = - AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_show_winner_amount, SUM(IF(digit_entry_num = - AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_show_winner_amount
+FROM `digit_entry`
+WHERE `refMarket_id` = :refMarket_id:
+AND `slot_id` = :slot_id:
+AND DATE(digit_entry_date) = :DATE(digit_entry_date):', [...], false)
+ 2 APPPATH\Models\Admin_m.php(1762): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin_c.php(2648): App\Models\Admin_m->get_mh_total_bid('digit_entry', '226', '0')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->play_game_history('226', '0')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 20:57:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND digit_entry_type = 'OPEN', (digit_entry_price * rate), 0)) as total_open_sho' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COALESCE(SUM(digit_entry_price), 0) as total_digit_entry_price, SUM(IF(win_status = 1, (digit_entry_price * rate), 0)) as total_digit_entry_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_win_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_bid_amount, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_bid_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_digit_entry_price, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_digit_entry_price, SUM(IF(digit_entry_num = - AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_show_winner_amount, SUM(IF(digit_entry_num = - AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_show_winner_amount
+FROM `digit_entry`
+WHERE `refMarket_id` = \'226\'
+AND `slot_id` = \'0\'
+AND DATE(digit_entry_date) = \'2025-09-10\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COALESCE(SUM(digit_entry_price), 0) as total_digit_entry_price, SUM(IF(win_status = 1, (digit_entry_price * rate), 0)) as total_digit_entry_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_win_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_bid_amount, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_bid_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_digit_entry_price, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_digit_entry_price, SUM(IF(digit_entry_num = - AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_show_winner_amount, SUM(IF(digit_entry_num = - AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_show_winner_amount
+FROM `digit_entry`
+WHERE `refMarket_id` = \'226\'
+AND `slot_id` = \'0\'
+AND DATE(digit_entry_date) = \'2025-09-10\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT COALESCE(SUM(digit_entry_price), 0) as total_digit_entry_price, SUM(IF(win_status = 1, (digit_entry_price * rate), 0)) as total_digit_entry_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_win_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_bid_amount, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_bid_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_digit_entry_price, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_digit_entry_price, SUM(IF(digit_entry_num = - AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_show_winner_amount, SUM(IF(digit_entry_num = - AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_show_winner_amount
+FROM `digit_entry`
+WHERE `refMarket_id` = :refMarket_id:
+AND `slot_id` = :slot_id:
+AND DATE(digit_entry_date) = :DATE(digit_entry_date):', [...], false)
+ 4 APPPATH\Models\Admin_m.php(1762): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Admin_c.php(2648): App\Models\Admin_m->get_mh_total_bid('digit_entry', '226', '0')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->play_game_history('226', '0')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 20:57:25 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND digit_entry_type = 'OPEN', (digit_entry_price * rate), 0)) as total_open_sho' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COALESCE(SUM(digit_entry_price), 0) as total_digit_entry_price, SUM(IF(win_status = 1, (digit_entry_price * rate), 0)) as total_digit_entry_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_win_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_bid_amount, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_bid_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_digit_entry_price, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_digit_entry_price, SUM(IF(digit_entry_num = - AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_show_winner_amount, SUM(IF(digit_entry_num = - AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_show_winner_amount
+FROM `digit_entry`
+WHERE `refMarket_id` = \'226\'
+AND `slot_id` = \'0\'
+AND DATE(digit_entry_date) = \'2025-09-10\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COALESCE(SUM(digit_entry_price), 0) as total_digit_entry_price, SUM(IF(win_status = 1, (digit_entry_price * rate), 0)) as total_digit_entry_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_win_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_bid_amount, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_bid_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_digit_entry_price, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_digit_entry_price, SUM(IF(digit_entry_num = - AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_show_winner_amount, SUM(IF(digit_entry_num = - AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_show_winner_amount
+FROM `digit_entry`
+WHERE `refMarket_id` = \'226\'
+AND `slot_id` = \'0\'
+AND DATE(digit_entry_date) = \'2025-09-10\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COALESCE(SUM(digit_entry_price), 0) as total_digit_entry_price, SUM(IF(win_status = 1, (digit_entry_price * rate), 0)) as total_digit_entry_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_win_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_bid_amount, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_bid_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_digit_entry_price, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_digit_entry_price, SUM(IF(digit_entry_num = - AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_show_winner_amount, SUM(IF(digit_entry_num = - AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_show_winner_amount
+FROM `digit_entry`
+WHERE `refMarket_id` = \'226\'
+AND `slot_id` = \'0\'
+AND DATE(digit_entry_date) = \'2025-09-10\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT COALESCE(SUM(digit_entry_price), 0) as total_digit_entry_price, SUM(IF(win_status = 1, (digit_entry_price * rate), 0)) as total_digit_entry_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_win_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_bid_amount, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_bid_amount, SUM(IF(digit_entry_type = \'CLOSE\', (digit_entry_price), 0)) as total_close_digit_entry_price, SUM(IF(digit_entry_type = \'OPEN\', (digit_entry_price), 0)) as total_open_digit_entry_price, SUM(IF(digit_entry_num = - AND digit_entry_type = \'OPEN\', (digit_entry_price * rate), 0)) as total_open_show_winner_amount, SUM(IF(digit_entry_num = - AND digit_entry_type = \'CLOSE\', (digit_entry_price * rate), 0)) as total_close_show_winner_amount
+FROM `digit_entry`
+WHERE `refMarket_id` = :refMarket_id:
+AND `slot_id` = :slot_id:
+AND DATE(digit_entry_date) = :DATE(digit_entry_date):', [...], false)
+ 5 APPPATH\Models\Admin_m.php(1762): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Admin_c.php(2648): App\Models\Admin_m->get_mh_total_bid('digit_entry', '226', '0')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->play_game_history('226', '0')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-10 20:57:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 20:57:25 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 20:59:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 20:59:36 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 20:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 20:59:37 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+CRITICAL - 2025-09-10 20:59:37 --> ErrorException: Undefined array key "total_close_show_winner_amount"
+[Method: POST, Route: admin-play-game-history/226/0]
+in APPPATH\Controllers\Admin_c.php on line 2663.
+ 1 APPPATH\Controllers\Admin_c.php(2663): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "total_close_show_winner_amount"', 'C:\\laragon\\www\\pro1\\app\\Controllers\\Admin_c.php', 2663)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->play_game_history('226', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-10 20:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 20:59:37 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:00:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:00:08 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:00:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:00:09 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-10 21:00:09 --> mysqli_sql_exception: Unknown column '0.00' in 'field list' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COALESCE...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COALESCE...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COALESCE...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT COALESCE...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Admin_m.php(1767): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\pro1\app\Controllers\Admin_c.php(2650): App\Models\Admin_m->get_mh_total_bid('jodi_entry', '226', '0')
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin_c->play_game_history('226', '0')
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-10 21:00:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column '0.00' in 'field list'
+[Method: POST, Route: admin-play-game-history/226/0]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT COALESCE(SUM(jodi_entry_price), 0) as total_jodi_entry_price, SUM(IF(win_status = 1, (jodi_entry_price * rate), 0)) as total_jodi_entry_win_amount, SUM(IF(win_status = 1 AND "OPEN" = \'OPEN\', (jodi_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND "OPEN" = \'CLOSE\', (jodi_entry_price * rate), 0)) as total_close_win_amount, SUM(IF("OPEN" = \'CLOSE\', (jodi_entry_price), 0)) as total_close_bid_amount, SUM(IF("OPEN" = \'OPEN\', (jodi_entry_price), 0)) as total_open_bid_amount, SUM(IF("OPEN" = \'CLOSE\', (jodi_entry_price), 0)) as total_close_jodi_entry_price, SUM(IF("OPEN" = \'OPEN\', (jodi_entry_price), 0)) as total_open_jodi_entry_price, SUM(IF(jodi_entry_num = \'-\', (jodi_entry_price * rate), 0)) as total_open_show_winner_amount, `0`.`00` as `total_close_show_winner_amount`
+FROM `jodi_entry`
+WHERE `refMarket_id` = :refMarket_id:
+AND DATE(jodi_entry_date) = :DATE(jodi_entry_date):', [...], false)
+ 2 APPPATH\Models\Admin_m.php(1767): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin_c.php(2650): App\Models\Admin_m->get_mh_total_bid('jodi_entry', '226', '0')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->play_game_history('226', '0')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 21:00:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column '0.00' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COALESCE(SUM(jodi_entry_price), 0) as total_jodi_entry_price, SUM(IF(win_status = 1, (jodi_entry_price * rate), 0)) as total_jodi_entry_win_amount, SUM(IF(win_status = 1 AND "OPEN" = \'OPEN\', (jodi_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND "OPEN" = \'CLOSE\', (jodi_entry_price * rate), 0)) as total_close_win_amount, SUM(IF("OPEN" = \'CLOSE\', (jodi_entry_price), 0)) as total_close_bid_amount, SUM(IF("OPEN" = \'OPEN\', (jodi_entry_price), 0)) as total_open_bid_amount, SUM(IF("OPEN" = \'CLOSE\', (jodi_entry_price), 0)) as total_close_jodi_entry_price, SUM(IF("OPEN" = \'OPEN\', (jodi_entry_price), 0)) as total_open_jodi_entry_price, SUM(IF(jodi_entry_num = \'-\', (jodi_entry_price * rate), 0)) as total_open_show_winner_amount, `0`.`00` as `total_close_show_winner_amount`
+FROM `jodi_entry`
+WHERE `refMarket_id` = \'226\'
+AND DATE(jodi_entry_date) = \'2025-09-10\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COALESCE(SUM(jodi_entry_price), 0) as total_jodi_entry_price, SUM(IF(win_status = 1, (jodi_entry_price * rate), 0)) as total_jodi_entry_win_amount, SUM(IF(win_status = 1 AND "OPEN" = \'OPEN\', (jodi_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND "OPEN" = \'CLOSE\', (jodi_entry_price * rate), 0)) as total_close_win_amount, SUM(IF("OPEN" = \'CLOSE\', (jodi_entry_price), 0)) as total_close_bid_amount, SUM(IF("OPEN" = \'OPEN\', (jodi_entry_price), 0)) as total_open_bid_amount, SUM(IF("OPEN" = \'CLOSE\', (jodi_entry_price), 0)) as total_close_jodi_entry_price, SUM(IF("OPEN" = \'OPEN\', (jodi_entry_price), 0)) as total_open_jodi_entry_price, SUM(IF(jodi_entry_num = \'-\', (jodi_entry_price * rate), 0)) as total_open_show_winner_amount, `0`.`00` as `total_close_show_winner_amount`
+FROM `jodi_entry`
+WHERE `refMarket_id` = \'226\'
+AND DATE(jodi_entry_date) = \'2025-09-10\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT COALESCE(SUM(jodi_entry_price), 0) as total_jodi_entry_price, SUM(IF(win_status = 1, (jodi_entry_price * rate), 0)) as total_jodi_entry_win_amount, SUM(IF(win_status = 1 AND "OPEN" = \'OPEN\', (jodi_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND "OPEN" = \'CLOSE\', (jodi_entry_price * rate), 0)) as total_close_win_amount, SUM(IF("OPEN" = \'CLOSE\', (jodi_entry_price), 0)) as total_close_bid_amount, SUM(IF("OPEN" = \'OPEN\', (jodi_entry_price), 0)) as total_open_bid_amount, SUM(IF("OPEN" = \'CLOSE\', (jodi_entry_price), 0)) as total_close_jodi_entry_price, SUM(IF("OPEN" = \'OPEN\', (jodi_entry_price), 0)) as total_open_jodi_entry_price, SUM(IF(jodi_entry_num = \'-\', (jodi_entry_price * rate), 0)) as total_open_show_winner_amount, `0`.`00` as `total_close_show_winner_amount`
+FROM `jodi_entry`
+WHERE `refMarket_id` = :refMarket_id:
+AND DATE(jodi_entry_date) = :DATE(jodi_entry_date):', [...], false)
+ 4 APPPATH\Models\Admin_m.php(1767): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Admin_c.php(2650): App\Models\Admin_m->get_mh_total_bid('jodi_entry', '226', '0')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->play_game_history('226', '0')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 21:00:10 --> [Caused by] mysqli_sql_exception: Unknown column '0.00' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COALESCE(SUM(jodi_entry_price), 0) as total_jodi_entry_price, SUM(IF(win_status = 1, (jodi_entry_price * rate), 0)) as total_jodi_entry_win_amount, SUM(IF(win_status = 1 AND "OPEN" = \'OPEN\', (jodi_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND "OPEN" = \'CLOSE\', (jodi_entry_price * rate), 0)) as total_close_win_amount, SUM(IF("OPEN" = \'CLOSE\', (jodi_entry_price), 0)) as total_close_bid_amount, SUM(IF("OPEN" = \'OPEN\', (jodi_entry_price), 0)) as total_open_bid_amount, SUM(IF("OPEN" = \'CLOSE\', (jodi_entry_price), 0)) as total_close_jodi_entry_price, SUM(IF("OPEN" = \'OPEN\', (jodi_entry_price), 0)) as total_open_jodi_entry_price, SUM(IF(jodi_entry_num = \'-\', (jodi_entry_price * rate), 0)) as total_open_show_winner_amount, `0`.`00` as `total_close_show_winner_amount`
+FROM `jodi_entry`
+WHERE `refMarket_id` = \'226\'
+AND DATE(jodi_entry_date) = \'2025-09-10\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COALESCE(SUM(jodi_entry_price), 0) as total_jodi_entry_price, SUM(IF(win_status = 1, (jodi_entry_price * rate), 0)) as total_jodi_entry_win_amount, SUM(IF(win_status = 1 AND "OPEN" = \'OPEN\', (jodi_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND "OPEN" = \'CLOSE\', (jodi_entry_price * rate), 0)) as total_close_win_amount, SUM(IF("OPEN" = \'CLOSE\', (jodi_entry_price), 0)) as total_close_bid_amount, SUM(IF("OPEN" = \'OPEN\', (jodi_entry_price), 0)) as total_open_bid_amount, SUM(IF("OPEN" = \'CLOSE\', (jodi_entry_price), 0)) as total_close_jodi_entry_price, SUM(IF("OPEN" = \'OPEN\', (jodi_entry_price), 0)) as total_open_jodi_entry_price, SUM(IF(jodi_entry_num = \'-\', (jodi_entry_price * rate), 0)) as total_open_show_winner_amount, `0`.`00` as `total_close_show_winner_amount`
+FROM `jodi_entry`
+WHERE `refMarket_id` = \'226\'
+AND DATE(jodi_entry_date) = \'2025-09-10\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COALESCE(SUM(jodi_entry_price), 0) as total_jodi_entry_price, SUM(IF(win_status = 1, (jodi_entry_price * rate), 0)) as total_jodi_entry_win_amount, SUM(IF(win_status = 1 AND "OPEN" = \'OPEN\', (jodi_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND "OPEN" = \'CLOSE\', (jodi_entry_price * rate), 0)) as total_close_win_amount, SUM(IF("OPEN" = \'CLOSE\', (jodi_entry_price), 0)) as total_close_bid_amount, SUM(IF("OPEN" = \'OPEN\', (jodi_entry_price), 0)) as total_open_bid_amount, SUM(IF("OPEN" = \'CLOSE\', (jodi_entry_price), 0)) as total_close_jodi_entry_price, SUM(IF("OPEN" = \'OPEN\', (jodi_entry_price), 0)) as total_open_jodi_entry_price, SUM(IF(jodi_entry_num = \'-\', (jodi_entry_price * rate), 0)) as total_open_show_winner_amount, `0`.`00` as `total_close_show_winner_amount`
+FROM `jodi_entry`
+WHERE `refMarket_id` = \'226\'
+AND DATE(jodi_entry_date) = \'2025-09-10\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT COALESCE(SUM(jodi_entry_price), 0) as total_jodi_entry_price, SUM(IF(win_status = 1, (jodi_entry_price * rate), 0)) as total_jodi_entry_win_amount, SUM(IF(win_status = 1 AND "OPEN" = \'OPEN\', (jodi_entry_price * rate), 0)) as total_open_win_amount, SUM(IF(win_status = 1 AND "OPEN" = \'CLOSE\', (jodi_entry_price * rate), 0)) as total_close_win_amount, SUM(IF("OPEN" = \'CLOSE\', (jodi_entry_price), 0)) as total_close_bid_amount, SUM(IF("OPEN" = \'OPEN\', (jodi_entry_price), 0)) as total_open_bid_amount, SUM(IF("OPEN" = \'CLOSE\', (jodi_entry_price), 0)) as total_close_jodi_entry_price, SUM(IF("OPEN" = \'OPEN\', (jodi_entry_price), 0)) as total_open_jodi_entry_price, SUM(IF(jodi_entry_num = \'-\', (jodi_entry_price * rate), 0)) as total_open_show_winner_amount, `0`.`00` as `total_close_show_winner_amount`
+FROM `jodi_entry`
+WHERE `refMarket_id` = :refMarket_id:
+AND DATE(jodi_entry_date) = :DATE(jodi_entry_date):', [...], false)
+ 5 APPPATH\Models\Admin_m.php(1767): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Admin_c.php(2650): App\Models\Admin_m->get_mh_total_bid('jodi_entry', '226', '0')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->play_game_history('226', '0')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-10 21:00:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:00:10 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:00:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:00:25 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:00:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:00:26 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:00:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:00:27 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:00:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:00:32 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:00:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:00:32 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:00:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:00:46 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:00:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:00:46 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:01:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:01:34 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:01:35 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:01:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:01:36 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:01:37 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:01:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:01:39 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:01:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:01:43 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:01:45 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:02:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:02:09 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:02:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:02:11 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:02:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:02:11 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:02:15 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:02:15 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:02:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:02:53 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:02:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:02:53 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:04:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:04:58 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:04:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:04:59 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:05:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:05:40 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:05:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:05:40 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:06:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:06:03 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:06:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:06:03 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:08:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:08:36 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:08:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:08:36 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:08:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:08:47 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:08:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:08:47 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:08:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:08:50 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:08:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:08:51 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:08:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:08:51 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:09:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:09:21 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:09:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:09:21 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:09:30 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:09:30 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:09:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:09:40 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:09:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:09:40 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:09:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:09:45 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-09-10 21:09:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-10 21:09:46 --> Session: Sessions is enabled, and one exists. Please don't $session->start();

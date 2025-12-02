@@ -1,0 +1,161 @@
+INFO - 2025-10-09 19:10:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:10:48 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-10-09 19:10:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:10:50 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+CRITICAL - 2025-10-09 19:10:50 --> ErrorException: Undefined array key "refMarket_id"
+[Method: POST, Route: win-bid-commission-ajax-admin]
+in APPPATH\Models\Admin_m.php on line 2101.
+ 1 APPPATH\Models\Admin_m.php(2101): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "refMarket_id"', 'C:\\laragon\\www\\pro1\\app\\Models\\Admin_m.php', 2101)
+ 2 APPPATH\Controllers\Admin_c.php(126): App\Models\Admin_m->card_get_total_win_bid()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->win_bid_commission_ajax()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 19:10:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:10:50 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-10-09 19:10:50 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Helpers\functions_helper.php on line 17.
+ 1 APPPATH\Helpers\functions_helper.php(17): number_format(null, 2, '.', '')
+ 2 APPPATH\Controllers\Admin_c.php(5827): formatToTwoDecimalPlaces(null)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->admin_report_ajax()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-09 19:10:50 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Helpers\functions_helper.php on line 17.
+ 1 APPPATH\Helpers\functions_helper.php(17): number_format(null, 2, '.', '')
+ 2 APPPATH\Controllers\Admin_c.php(5828): formatToTwoDecimalPlaces(null)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->admin_report_ajax()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-09 19:10:50 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Helpers\functions_helper.php on line 17.
+ 1 APPPATH\Helpers\functions_helper.php(17): number_format(null, 2, '.', '')
+ 2 APPPATH\Controllers\Admin_c.php(5831): formatToTwoDecimalPlaces(null)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->admin_report_ajax()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-09 19:10:50 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Helpers\functions_helper.php on line 17.
+ 1 APPPATH\Helpers\functions_helper.php(17): number_format(null, 2, '.', '')
+ 2 APPPATH\Controllers\Admin_c.php(5832): formatToTwoDecimalPlaces(null)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->admin_report_ajax()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 19:10:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:10:50 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-10-09 19:10:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:10:50 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-10-09 19:10:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:10:50 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-10-09 19:10:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:10:51 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-10-09 19:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:11:24 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-10-09 19:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:11:24 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-10-09 19:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:11:25 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-10-09 19:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:11:25 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-10-09 19:11:25 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Helpers\functions_helper.php on line 17.
+ 1 APPPATH\Helpers\functions_helper.php(17): number_format(null, 2, '.', '')
+ 2 APPPATH\Controllers\Admin_c.php(5827): formatToTwoDecimalPlaces(null)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->admin_report_ajax()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-09 19:11:25 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Helpers\functions_helper.php on line 17.
+ 1 APPPATH\Helpers\functions_helper.php(17): number_format(null, 2, '.', '')
+ 2 APPPATH\Controllers\Admin_c.php(5828): formatToTwoDecimalPlaces(null)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->admin_report_ajax()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-09 19:11:25 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Helpers\functions_helper.php on line 17.
+ 1 APPPATH\Helpers\functions_helper.php(17): number_format(null, 2, '.', '')
+ 2 APPPATH\Controllers\Admin_c.php(5831): formatToTwoDecimalPlaces(null)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->admin_report_ajax()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-09 19:11:25 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Helpers\functions_helper.php on line 17.
+ 1 APPPATH\Helpers\functions_helper.php(17): number_format(null, 2, '.', '')
+ 2 APPPATH\Controllers\Admin_c.php(5832): formatToTwoDecimalPlaces(null)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->admin_report_ajax()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 19:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:11:25 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-10-09 19:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:11:25 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-10-09 19:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:11:25 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-10-09 19:11:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:11:26 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-10-09 19:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:11:27 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-10-09 19:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:11:27 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-10-09 19:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:11:27 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-10-09 19:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:11:27 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-10-09 19:11:27 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Helpers\functions_helper.php on line 17.
+ 1 APPPATH\Helpers\functions_helper.php(17): number_format(null, 2, '.', '')
+ 2 APPPATH\Controllers\Admin_c.php(5827): formatToTwoDecimalPlaces(null)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->admin_report_ajax()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-09 19:11:27 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Helpers\functions_helper.php on line 17.
+ 1 APPPATH\Helpers\functions_helper.php(17): number_format(null, 2, '.', '')
+ 2 APPPATH\Controllers\Admin_c.php(5828): formatToTwoDecimalPlaces(null)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->admin_report_ajax()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-09 19:11:27 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Helpers\functions_helper.php on line 17.
+ 1 APPPATH\Helpers\functions_helper.php(17): number_format(null, 2, '.', '')
+ 2 APPPATH\Controllers\Admin_c.php(5831): formatToTwoDecimalPlaces(null)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->admin_report_ajax()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-10-09 19:11:27 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Helpers\functions_helper.php on line 17.
+ 1 APPPATH\Helpers\functions_helper.php(17): number_format(null, 2, '.', '')
+ 2 APPPATH\Controllers\Admin_c.php(5832): formatToTwoDecimalPlaces(null)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_c->admin_report_ajax()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_c))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 19:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:11:27 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-10-09 19:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 19:11:28 --> Session: Sessions is enabled, and one exists. Please don't $session->start();

@@ -1,0 +1,380 @@
+INFO - 2025-08-18 20:45:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 20:45:04 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+CRITICAL - 2025-08-18 20:45:04 --> ErrorException: Trying to access array offset on null
+[Method: GET, Route: pannel/3/0]
+in APPPATH\Controllers\User_c.php on line 2379.
+ 1 APPPATH\Controllers\User_c.php(2379): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on null', 'C:\\laragon\\www\\pro1\\app\\Controllers\\User_c.php', 2379)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User_c->pannel_chart('3', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 20:46:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 20:46:40 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-08-18 20:46:40 --> mysqli_sql_exception: Table 'pro1.t_aankdo' doesn't exist in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Common_m.php(3086): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\pro1\app\Controllers\User_c.php(2400): App\Models\Common_m->get_jodi_pannel_result('3', '', 'all')
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\User_c->pannel_chart('3', '0')
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-08-18 20:46:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'pro1.t_aankdo' doesn't exist
+[Method: GET, Route: pannel/3/0]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `t_aankdo`
+WHERE `refMarket_id` = :refMarket_id:
+GROUP BY `aankdo_date`
+ORDER BY `aankdo_date` ASC', [...], false)
+ 2 APPPATH\Models\Common_m.php(3086): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\User_c.php(2400): App\Models\Common_m->get_jodi_pannel_result('3', '', 'all')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User_c->pannel_chart('3', '0')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-18 20:46:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'pro1.t_aankdo' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `t_aankdo`
+WHERE `refMarket_id` = \'3\'
+GROUP BY `aankdo_date`
+ORDER BY `aankdo_date` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `t_aankdo`
+WHERE `refMarket_id` = \'3\'
+GROUP BY `aankdo_date`
+ORDER BY `aankdo_date` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `t_aankdo`
+WHERE `refMarket_id` = :refMarket_id:
+GROUP BY `aankdo_date`
+ORDER BY `aankdo_date` ASC', [...], false)
+ 4 APPPATH\Models\Common_m.php(3086): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\User_c.php(2400): App\Models\Common_m->get_jodi_pannel_result('3', '', 'all')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User_c->pannel_chart('3', '0')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-18 20:46:40 --> [Caused by] mysqli_sql_exception: Table 'pro1.t_aankdo' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `t_aankdo`
+WHERE `refMarket_id` = \'3\'
+GROUP BY `aankdo_date`
+ORDER BY `aankdo_date` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `t_aankdo`
+WHERE `refMarket_id` = \'3\'
+GROUP BY `aankdo_date`
+ORDER BY `aankdo_date` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `t_aankdo`
+WHERE `refMarket_id` = \'3\'
+GROUP BY `aankdo_date`
+ORDER BY `aankdo_date` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `t_aankdo`
+WHERE `refMarket_id` = :refMarket_id:
+GROUP BY `aankdo_date`
+ORDER BY `aankdo_date` ASC', [...], false)
+ 5 APPPATH\Models\Common_m.php(3086): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\User_c.php(2400): App\Models\Common_m->get_jodi_pannel_result('3', '', 'all')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User_c->pannel_chart('3', '0')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 20:47:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 20:47:18 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 20:47:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 20:47:39 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 20:47:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 20:47:40 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 20:47:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 20:47:45 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 20:48:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 20:48:10 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 20:48:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 20:48:10 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 20:49:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 20:49:53 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 20:49:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 20:49:55 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:18:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:18:51 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:22:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:22:33 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:22:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:22:34 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:22:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:22:38 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:22:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:22:42 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:22:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:22:42 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:22:43 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:22:43 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:22:43 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:22:43 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:22:43 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:25:02 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:25:02 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:36:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:36:03 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:36:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:36:03 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:44:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:44:41 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:44:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:44:42 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:46:43 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 21:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 21:46:43 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:00:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:00:51 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:00:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:00:51 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:00:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:00:51 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:00:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:00:51 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:00:52 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:00:52 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:00:52 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:00:52 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:00:54 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:09:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:09:48 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:09:55 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:09:55 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:10:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:10:14 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:10:39 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:10:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:10:48 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:10:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:10:52 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+INFO - 2025-08-18 22:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:14:12 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-08-18 22:15:12 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2375.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 22:15:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:15:12 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-08-18 22:15:35 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2375.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 22:15:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:15:35 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-08-18 22:15:37 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2375.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 22:15:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:15:37 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-08-18 22:15:38 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2375.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 22:15:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:15:38 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-08-18 22:16:30 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2375.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 22:16:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:16:30 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-08-18 22:16:41 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2375.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 22:16:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:16:41 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-08-18 22:18:58 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2375.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 22:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:18:58 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-08-18 22:19:01 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2375.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 22:19:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:19:01 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-08-18 22:19:31 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2375.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 22:19:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:19:31 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-08-18 22:20:40 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2375.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 22:20:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:20:40 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-08-18 22:21:21 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2375.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 22:21:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:21:21 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-08-18 22:21:32 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2375.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 22:21:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:21:32 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-08-18 22:21:48 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2375.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 22:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:21:48 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-08-18 22:22:04 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2375.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 22:22:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:22:04 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-08-18 22:22:44 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2375.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 22:22:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:22:44 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+WARNING - 2025-08-18 22:22:51 --> [DEPRECATED] Optional parameter $market_name declared before required parameter $market_id is implicitly treated as a required parameter in APPPATH\Controllers\User_c.php on line 2375.
+ 1 FCPATH\vendor\composer\ClassLoader.php(576): include('C:\\laragon\\www\\pro1\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 FCPATH\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\laragon\\www\\pro1\\vendor\\composer/../../app/Controllers/User_c.php')
+ 3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\User_c')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\User_c', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-08-18 22:22:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-08-18 22:22:51 --> Session: Sessions is enabled, and one exists. Please don't $session->start();

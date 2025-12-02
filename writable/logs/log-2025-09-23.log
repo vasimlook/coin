@@ -1,0 +1,866 @@
+INFO - 2025-09-23 19:56:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-23 19:56:03 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-23 19:56:03 --> mysqli_sql_exception: Unknown column 'we.created_at' in 'where clause' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `wi...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `wi...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `wi...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `wi...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\laragon\www\pro1\app\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-23 19:56:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'we.created_at' in 'where clause'
+[Method: GET, Route: delete-weekly]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 2 APPPATH\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+ 3 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:56:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'we.created_at' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 4 APPPATH\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+ 5 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:56:03 --> [Caused by] mysqli_sql_exception: Unknown column 'we.created_at' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 5 APPPATH\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-23 19:56:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-23 19:56:31 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-23 19:56:31 --> mysqli_sql_exception: Unknown column 'we.created_at' in 'where clause' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `wi...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `wi...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `wi...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `wi...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\laragon\www\pro1\app\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-23 19:56:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'we.created_at' in 'where clause'
+[Method: GET, Route: delete-weekly]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 2 APPPATH\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+ 3 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:56:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'we.created_at' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 4 APPPATH\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+ 5 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:56:31 --> [Caused by] mysqli_sql_exception: Unknown column 'we.created_at' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 5 APPPATH\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-23 19:56:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-23 19:56:47 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-23 19:56:47 --> mysqli_sql_exception: Unknown column 'we.created_at' in 'where clause' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `wi...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `wi...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `wi...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `wi...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\laragon\www\pro1\app\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-23 19:56:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'we.created_at' in 'where clause'
+[Method: GET, Route: delete-weekly]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 2 APPPATH\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+ 3 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:56:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'we.created_at' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 4 APPPATH\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+ 5 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:56:47 --> [Caused by] mysqli_sql_exception: Unknown column 'we.created_at' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 5 APPPATH\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-23 19:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-23 19:57:02 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-23 19:57:02 --> mysqli_sql_exception: Unknown column 'w.id' in 'where clause' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `wi...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `wi...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `wi...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `wi...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\laragon\www\pro1\app\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-23 19:57:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'w.id' in 'where clause'
+[Method: GET, Route: delete-weekly]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 2 APPPATH\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+ 3 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:57:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'w.id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 4 APPPATH\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+ 5 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:57:02 --> [Caused by] mysqli_sql_exception: Unknown column 'w.id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `withdrawal_export`
+WHERE DATE(created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 5 APPPATH\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-23 19:57:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-23 19:57:27 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-23 19:57:27 --> mysqli_sql_exception: Unknown column 'we.created_at' in 'where clause' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `wi...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `wi...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `wi...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `wi...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\laragon\www\pro1\app\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-23 19:57:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'we.created_at' in 'where clause'
+[Method: GET, Route: delete-weekly]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 2 APPPATH\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+ 3 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:57:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'we.created_at' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 4 APPPATH\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+ 5 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:57:27 --> [Caused by] mysqli_sql_exception: Unknown column 'we.created_at' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(we.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 5 APPPATH\Models\Crons_m.php(129): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-23 19:58:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-23 19:58:26 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-23 19:58:26 --> mysqli_sql_exception: Unknown column 'w.id' in 'where clause' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `wi...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `wi...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `wi...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `wi...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Crons_m.php(132): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\laragon\www\pro1\app\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-23 19:58:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'w.id' in 'where clause'
+[Method: GET, Route: delete-weekly]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 2 APPPATH\Models\Crons_m.php(132): CodeIgniter\Database\BaseBuilder->delete()
+ 3 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:58:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'w.id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 4 APPPATH\Models\Crons_m.php(132): CodeIgniter\Database\BaseBuilder->delete()
+ 5 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:58:26 --> [Caused by] mysqli_sql_exception: Unknown column 'w.id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 5 APPPATH\Models\Crons_m.php(132): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-23 19:58:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-23 19:58:28 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-23 19:58:28 --> mysqli_sql_exception: Unknown column 'w.id' in 'where clause' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `wi...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `wi...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `wi...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `wi...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Crons_m.php(132): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\laragon\www\pro1\app\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-23 19:58:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'w.id' in 'where clause'
+[Method: GET, Route: delete-weekly]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 2 APPPATH\Models\Crons_m.php(132): CodeIgniter\Database\BaseBuilder->delete()
+ 3 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:58:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'w.id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 4 APPPATH\Models\Crons_m.php(132): CodeIgniter\Database\BaseBuilder->delete()
+ 5 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:58:28 --> [Caused by] mysqli_sql_exception: Unknown column 'w.id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > 0
+ )')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+w.id IS NULL
+OR `w`.`status` > :w.status:
+ )', [...], false)
+ 5 APPPATH\Models\Crons_m.php(132): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-23 19:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-23 19:58:49 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-23 19:58:49 --> mysqli_sql_exception: Unknown column 'withdrawals.id' in 'where clause' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `wi...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `wi...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `wi...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `wi...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Crons_m.php(132): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\laragon\www\pro1\app\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-23 19:58:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'withdrawals.id' in 'where clause'
+[Method: GET, Route: delete-weekly]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+withdrawals.id IS NULL
+OR `withdrawals`.`status` > :withdrawals.status:
+ )', [...], false)
+ 2 APPPATH\Models\Crons_m.php(132): CodeIgniter\Database\BaseBuilder->delete()
+ 3 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:58:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'withdrawals.id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+withdrawals.id IS NULL
+OR `withdrawals`.`status` > 0
+ )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+withdrawals.id IS NULL
+OR `withdrawals`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+withdrawals.id IS NULL
+OR `withdrawals`.`status` > :withdrawals.status:
+ )', [...], false)
+ 4 APPPATH\Models\Crons_m.php(132): CodeIgniter\Database\BaseBuilder->delete()
+ 5 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:58:49 --> [Caused by] mysqli_sql_exception: Unknown column 'withdrawals.id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+withdrawals.id IS NULL
+OR `withdrawals`.`status` > 0
+ )', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+withdrawals.id IS NULL
+OR `withdrawals`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+withdrawals.id IS NULL
+OR `withdrawals`.`status` > 0
+ )')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+withdrawals.id IS NULL
+OR `withdrawals`.`status` > :withdrawals.status:
+ )', [...], false)
+ 5 APPPATH\Models\Crons_m.php(132): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-23 19:59:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-23 19:59:18 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
+ERROR - 2025-09-23 19:59:18 --> mysqli_sql_exception: Unknown column 'withdrawals.id' in 'where clause' in C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `wi...', 0)
+#1 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `wi...')
+#2 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `wi...')
+#3 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `wi...', Array, false)
+#4 C:\laragon\www\pro1\app\Models\Crons_m.php(132): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\laragon\www\pro1\app\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+#6 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+#7 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+#8 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\pro1\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\pro1\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-23 19:59:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'withdrawals.id' in 'where clause'
+[Method: GET, Route: delete-weekly]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+withdrawals.id IS NULL
+OR `withdrawals`.`status` > :withdrawals.status:
+ )', [...], false)
+ 2 APPPATH\Models\Crons_m.php(132): CodeIgniter\Database\BaseBuilder->delete()
+ 3 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:59:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'withdrawals.id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+withdrawals.id IS NULL
+OR `withdrawals`.`status` > 0
+ )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+withdrawals.id IS NULL
+OR `withdrawals`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+withdrawals.id IS NULL
+OR `withdrawals`.`status` > :withdrawals.status:
+ )', [...], false)
+ 4 APPPATH\Models\Crons_m.php(132): CodeIgniter\Database\BaseBuilder->delete()
+ 5 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-23 19:59:18 --> [Caused by] mysqli_sql_exception: Unknown column 'withdrawals.id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+withdrawals.id IS NULL
+OR `withdrawals`.`status` > 0
+ )', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+withdrawals.id IS NULL
+OR `withdrawals`.`status` > 0
+ )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+withdrawals.id IS NULL
+OR `withdrawals`.`status` > 0
+ )')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `withdrawal_export`
+WHERE DATE(withdrawal_export.created_at) < DATE_SUB(NOW(), INTERVAL 1 WEEK)
+AND   (
+withdrawals.id IS NULL
+OR `withdrawals`.`status` > :withdrawals.status:
+ )', [...], false)
+ 5 APPPATH\Models\Crons_m.php(132): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Crons_c.php(90): App\Models\Crons_m->delete_Weeekly()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Crons_c->delete_Weeekly()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Crons_c))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-09-23 20:01:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-23 20:01:05 --> Session: Sessions is enabled, and one exists. Please don't $session->start();
