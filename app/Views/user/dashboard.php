@@ -44,7 +44,7 @@
                             <div class="row">
                                 <?php
                                 foreach ($allUser as $key => $value) {
-                                    if ($value['id'] == $_SESSION['user']['id']) {
+                                    if ($value['id'] == $_SESSION['user']['id'] && $value['balance'] > 0) {
                                         continue;
                                     }
                                 ?>
