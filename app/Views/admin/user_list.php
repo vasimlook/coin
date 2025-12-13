@@ -37,7 +37,7 @@
                                     <input type="text" placeholder="Date"  class="form-control date-picker" value="<?php echo date("d-m-Y"); ?>" data-date-format="dd-mm-yyyy" id="to_date" autocomplete="off">
                                 </div>
                                 <div class="col-6 p-1">
-                                    <button class="form-control btn btn-sm btn-block bg-primary text-light" id="Go_search"> <?php echo convertToHindi('Go'); ?></button>
+                                    <button class="form-control btn btn-sm btn-block bg-primary text-light" id="Go_search">GO</button>
                                 </div>
                             </div>
                             <hr>
