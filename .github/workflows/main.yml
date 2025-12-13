@@ -1,0 +1,30 @@
+name: 🚀 Auto Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.BIGGROW_SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/id_ed25519
+          ssh-keyscan -p 22 -H 185.201.9.70 >> ~/.ssh/known_hosts
+
+      - name: Verify SSH Connection
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -p 22 -o StrictHostKeyChecking=no biggr2133@185.201.9.70 "echo 'SSH Connection Successful'"
+
+      - name: Deploy Code to Server
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -p 22 biggr2133@185.201.9.70 "cd /home/biggrow.pro/public_html && git pull origin main"
