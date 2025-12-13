@@ -110,6 +110,7 @@ define('IMG_DIR','uploads/');
 define('IMG_DIR_LINK', BASE_URL.'/uploads/');
 define('ASSETS_DIR_LINK', BASE_URL.'/assets/');
 define('ASSETS_FOLDER', BASE_URL.'/assets/');
+define('APP_NAME','BIGGROW');
 
 define('USER_LOGIN_LINK',BASE_URL.'/login');
 define('USER_LOGOUT_LINK',BASE_URL.'/logout');

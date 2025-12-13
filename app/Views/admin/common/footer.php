@@ -17,7 +17,6 @@
 
 <!-- common javascript for all project -->
 <?php include(APPPATH . "Views/notify.php"); ?>
-<?php include(APPPATH . "Views/common_admin_js.php"); ?>
 <!-- include javascript page wise -->
 <?php if ($title == ADMIN_USER_LIST_TITLE) { include(APPPATH . "Views/admin/js/user_list_js.php"); } ?>
 <?php if ($title == ADMIN_USER_PROFILE_TITLE) { include(APPPATH . "Views/admin/js/user_profile_js.php"); } ?>

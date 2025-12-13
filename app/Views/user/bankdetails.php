@@ -88,7 +88,7 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <div class="form-control-wrap">
-                                            <input type="text" class="form-control" name="paytm_pay" placeholder="Enter Paytm Pay Number" autocomplete="off" value="<?php echo $bank_details['paytm_pay']; ?>">
+                                            <input type="text" class="form-control" name="paytm_pay" placeholder="Enter Paytm Number" autocomplete="off" value="<?php echo $bank_details['paytm_pay']; ?>">
                                             <p class="text-danger"><?php if(isset($errors['paytm_pay'])) { echo $errors['paytm_pay']; } ?></p> 
                                         </div>
                                     </div>
