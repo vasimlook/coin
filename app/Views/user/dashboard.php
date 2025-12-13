@@ -44,9 +44,10 @@
                             <div class="row">
                                 <?php
                                 foreach ($allUser as $key => $value) {
-                                    if ($value['id'] == $_SESSION['user']['id'] && $value['balance'] > 0) {
+                                    if ($value['id'] == $_SESSION['user']['id']) {
                                         continue;
                                     }
+                                    if($value['balance'] > 0){
                                 ?>
                                     <div class="container pt-2">
                                         <div class="bet-card p-4">
@@ -75,7 +76,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                <?php } ?>
+                                <?php
+                                    }
+                            } ?>
                             </div>
                         </div>
                     </div><!-- card -->
