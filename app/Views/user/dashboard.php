@@ -48,7 +48,7 @@
                                         continue;
                                     }
                                 ?>
-                                    <div class="container my-5">
+                                    <div class="container pt-2">
                                         <div class="bet-card p-4">
                                             <div class="d-flex justify-content-between align-items-start">
                                                 <div>
