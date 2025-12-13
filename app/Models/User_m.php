@@ -55,7 +55,7 @@ class User_m extends Model
         return $builder->get()->getRowArray();
     }
 
-    public function get_sum_amount($table,$select = '', $where,$sum = '',$count)
+    public function get_sum_amount($table,$select = '', $where = '',$sum = '',$count = 0)
     {
         $builder = $this->db->table($table);
         if(!empty($sum)) {
