@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="nk-content-inner">
             <div class="nk-content-body">
-                <div class="nk-block">
+                <div class="nk-block nk-block-lg">
                     <div class="row">
                         <div class="col-12 col-md-3 mb-1">
                             <div class="card bg-primary is-dark">
