@@ -28,25 +28,25 @@
                     <li class="nk-menu-item">
                         <a href="<?php echo USER_DASHBOARD_LINK; ?>" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-home"></em></span>
-                            <span class="nk-menu-text"><?php echo convertToHindi('Home'); ?> </span>
+                            <span class="nk-menu-text">Home</span>
                         </a>
                     </li>
                     <li class="nk-menu-item">
                         <a href="<?php echo UPDATE_BANK_DETAILS_LINK; ?>" class="nk-menu-link">
                             <span class="nk-menu-icon text-orange-tbg"><em class="icon ni ni-money"></em></span>
-                            <span class="nk-menu-text text-light-skyblue-tbg"><?php echo convertToHindi('Update Bank Details'); ?> </span>
+                            <span class="nk-menu-text text-light-skyblue-tbg">Update Bank Details</span>
                         </a>
                     </li>
                     <li class="nk-menu-item">
                         <a href="<?php echo USER_CHANGE_PWD_LINK; ?>" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-lock"></em></span>
-                            <span class="nk-menu-text"><?php echo convertToHindi('Change Password'); ?> </span>
+                            <span class="nk-menu-text">Change Password</span>
                         </a>
                     </li>
                     <li class="nk-menu-item">
                         <a href="<?php echo USER_LOGOUT_LINK; ?>" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-power"></em></span>
-                            <span class="nk-menu-text"><?php echo convertToHindi('Logout'); ?> </span>
+                            <span class="nk-menu-text">Logout</span>
                         </a>
                     </li>
                 </ul><!-- .nk-menu -->
