@@ -1,87 +1,110 @@
-.box {
-    box-shadow: 10px 10px 30px rgba(221, 219, 219, 0.3), -10px -10px 30px rgba(0, 0, 0, 0.1); /* 3D shadow effect */    
+/* Main Card */
+.bet-card{
+    max-width:420px;
+    margin:auto;
+    border-radius:18px;
+    background: linear-gradient(145deg,#140b2d,#1e103f);
+    box-shadow:
+        0 0 25px rgba(157,78,221,.6),
+        inset 0 0 20px rgba(0,0,0,.7);
+    border:1px solid rgba(199,125,255,.4);
+    position:relative;
 }
 
-/* winner css */
-.winners-section {
-    padding: 20px;
-    background-color: #f9f9f9;
-    overflow: hidden;
-    /* Hide overflowing content */
+/* Neon Text */
+.text-neon{
+    color:#c77dff;
+    text-shadow:0 0 8px rgba(199,125,255,.8);
 }
 
-/* Horizontal Scroll Container */
-.winners-container {
-    display: flex;
-    gap: 20px;
-    /* Space between items */
-    overflow: hidden;
-    white-space: nowrap;
+/* Buy Button */
+.bet-btn{
+    background: linear-gradient(135deg,#ffd166,#ff8800);
+    color:#000;
+    font-weight:700;
+    border:none;
+    padding:8px 18px;
+    border-radius:12px;
+    box-shadow:
+        0 0 12px rgba(255,193,7,.9),
+        inset 0 -2px 6px rgba(0,0,0,.4);
+}
+.bet-btn:hover{
+    transform: scale(1.05);
 }
 
-/* Horizontal Scroll Container */
-.winners-container-2 {
-    display: flex;
-    gap: 20px;
-    /* Space between items */
-    overflow: hidden;
-    white-space: nowrap;
+/* Divider */
+.bet-divider{
+    border-top:1px dashed rgba(255,255,255,.2);
 }
 
-.winner {
-    flex: 0 0 auto;
-    min-width: 40px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+/* Numbers Glow */
+.text-warning{
+    text-shadow:0 0 10px rgba(255,193,7,.8);
+}
+.text-success{
+    text-shadow:0 0 10px rgba(40,167,69,.8);
 }
 
-.winner img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    /* Makes the image circular */
-    object-fit: cover;
+/* Main Board */
+.gamble-board{
+    max-width:420px;
+    margin:auto;
+    background: linear-gradient(180deg,#2d1b69,#120824);
+    border-radius:20px;
+    padding:16px;
+    box-shadow:0 0 30px rgba(157,78,221,.6);
 }
 
-.winner span {    
-    font-size: 11px;
+/* Total Earning */
+.total-box{
+    background: linear-gradient(135deg,#5a189a,#9d4edd);
+    border-radius:16px;
+    box-shadow:0 0 25px rgba(199,125,255,.9);
+    text-align:left;
 }
 
-.simplebar-content{
-    padding: 0px 0px 48px !important;
+/* Gold Text */
+.text-gold{
+    color:#ffd166;
+    text-shadow:0 0 15px rgba(255,209,102,.9);
 }
 
-.blinking-text {
-    font-weight: bold; /* Font weight */
-    animation: blink 2s infinite; /* Blinking effect */
+/* Stat Boxes */
+.stat-box{
+    background: linear-gradient(145deg,#3c096c,#5a189a);
+    border-radius:14px;
+    padding:14px;
+    box-shadow:
+        inset 0 0 12px rgba(0,0,0,.5),
+        0 0 18px rgba(157,78,221,.6);
+    color:#fff;
+}
+.stat-box span{
+    font-size:13px;
+    opacity:.8;
+}
+.stat-box h2{
+    margin-top:6px;
+    font-weight:800;
 }
 
-@keyframes blink {
-    0%, 100% { opacity: 1; } /* Fully visible */
-    50% { opacity: 0; }      /* Invisible */
+/* Neon Numbers */
+.text-neon{
+    color:#e0aaff;
+    text-shadow:0 0 12px rgba(224,170,255,.9);
 }
 
-video {
-    width: 100%;
-    border-radius: 10px;
+/* Members style */
+.members{
+    background: linear-gradient(145deg,#240046,#3c096c);
 }
 
-.highlight
-{
-    border: 3px solid #ffa50087;
-    border-radius: 10px;
-    margin: 0px;
+/* Pulse Animation */
+.pulse{
+    animation:pulseGlow 1.6s infinite alternate;
 }
-.round-highlight
-{
-    display: inline-block;
-    background-color: #fff;
-    color: red;
-    border-radius: 5%;    
-    height: 24px;
-    text-align: center;    
-    font-size: 14px;
+@keyframes pulseGlow{
+    from{ text-shadow:0 0 10px rgba(255,209,102,.6); }
+    to{ text-shadow:0 0 25px rgba(255,209,102,1); }
 }

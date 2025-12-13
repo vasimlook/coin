@@ -25,4 +25,4 @@
 <body class="nk-body bg-lighter npc-default has-sidebar">
   <div class="nk-app-root">
     <!-- main @s -->
-    <div class="nk-main">
+    <div class="nk-main" style="background: radial-gradient(circle at top, #3a0ca3, #0b061a);">
