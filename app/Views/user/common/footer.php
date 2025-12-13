@@ -16,7 +16,6 @@
 
  <!-- common javascript for all project -->
 <?php include(APPPATH . "Views/notify.php"); ?>
-<?php include(APPPATH . "Views/common_js.php"); ?>
 <?php if ($title == USER_DASHBOARD_TITLE) { include(APPPATH . "Views/user/js/dashboard_js.php"); } ?>
 </body>
 </html>
