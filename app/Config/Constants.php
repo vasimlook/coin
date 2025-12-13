@@ -111,8 +111,6 @@ define('IMG_DIR_LINK', BASE_URL.'/uploads/');
 define('ASSETS_DIR_LINK', BASE_URL.'/assets/');
 define('ASSETS_FOLDER', BASE_URL.'/assets/');
 
-//USER LINK
-// define('USER_LOGIN_LINK_2',BASE_URL.'/payment-login/');
 define('USER_LOGIN_LINK',BASE_URL.'/login');
 define('USER_LOGOUT_LINK',BASE_URL.'/logout');
 define('USER_CHANGE_PWD_LINK',BASE_URL.'/change-password');
@@ -142,10 +140,6 @@ define('ADMIN_COIN_AJAX_LINK',BASE_URL.'/admin-coin-list-ajax');
 define('ADMIN_COIN_ACCEPT_LINK',BASE_URL.'/admin-coin-accept-link/');
 define('ADMIN_RELEASE_COIN_LINK',BASE_URL.'/admin-coin-release-link');
 
-//CRON LINK
-
-
-
 //USER TITLE
 define('USER_DASHBOARD_TITLE','DASHBOARD');
 define('MY_EARNING_TITLE', 'MY-EARNING');
@@ -163,21 +157,19 @@ define('ADMIN_SETTINGS_TITLE','Admin Setting');
 define('ADMIN_USER_PROFILE_TITLE', 'USER-PROFILE');
 define('ADMIN_COIN_LIST_TITLE', 'COIN REQUEST LIST');
 
-
-
 define("UPLOAD_FOLDER",BASE_URL.'/uploads/');
-define("QR_FOLDER",'uploads/online_qr');
+define('REGISTER_CODE', 'XAB12A');
 
 //database
-if(DOMAIN == 'coin.artoon.in'){
+if(DOMAIN == 'coin.test'){
     define("DB_HOSTNAME",'localhost');
     define("DB_USERNAME",'root');
     define("DB_PASSWORD",'');
     define("DATABASE",'coin');
 }
-else if(DOMAIN == 'pro1.artoon.in'){
+if(DOMAIN == 'biggrow.pro'){
     define("DB_HOSTNAME",'localhost');
-    define("DB_USERNAME",'root');
-    define("DB_PASSWORD",'');
-    define("DATABASE",'pro1');
+    define("DB_USERNAME",'bigg_biggrow');
+    define("DB_PASSWORD",'Biggrow@777');
+    define("DATABASE",'bigg_biggrow');
 }

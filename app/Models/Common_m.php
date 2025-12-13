@@ -58,19 +58,6 @@ class Common_m extends Model
         $query = $builder->get();
         return $query->getResult();
     }
-    function get_datatables_for_coppy_2_clipboard($table, $column_order = [], $column_search = [], $order = [], $condition_name = '')
-    {
-        $builder = $this->db->table($table);
-        $this->custome_query($condition_name, $builder);
-        if(!isset($_POST['bypass'])){
-            $this->_get_datatables_query($builder, $column_order, $column_search, $order);
-        }
-        // if ($_POST['length'] != -1)
-        //     $builder->limit($_POST['length'], $_POST['start']);
-        $query = $builder->get();
-        return $query->getResult();
-    }
-    
 
     function count_filtered($table, $column_order = [], $column_search = [], $order = [], $condition_name = '')
     {

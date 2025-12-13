@@ -10,7 +10,6 @@ use App\Models\Datatable_m;
 use CodeIgniter\Cookie\Cookie;
 use CodeIgniter\Cookie\CookieStore;
 use Config\Services;
-// use App\Libraries\S3Uploader;
 
 class User_c extends BaseController
 {
@@ -18,8 +17,6 @@ class User_c extends BaseController
     protected $session;
     private $User_m;
     private $Common_m;
-    private $Login_m;
-    private $Datatable_m;
     protected $validation;
 
     public function __construct()
@@ -35,8 +32,6 @@ class User_c extends BaseController
         sessionCheckUser();
         $this->User_m = new User_m();
         $this->Common_m = new Common_m();
-        $this->Login_m = new Login_m();
-        $this->Datatable_m = new Datatable_m();
         $user_info = $this->User_m->get_user_info($_SESSION['user']['id']);
         $setting_info = $this->User_m->get_setting();
         $this->session->set($setting_info);
@@ -51,6 +46,7 @@ class User_c extends BaseController
             $_SESSION['balance'] = formatToTwoDecimalPlaces(0);
         }
     }
+    
     public function index()
     {
         $_SESSION['form_token'] = bin2hex(random_bytes(16));
@@ -63,6 +59,7 @@ class User_c extends BaseController
         $data['title'] = USER_DASHBOARD_TITLE;
         echo load_view('user', 'user/dashboard', $data);
     } 
+
     public function bank_details()
     {
         helper('form');
@@ -134,6 +131,7 @@ class User_c extends BaseController
         $data['title'] = BANK_DETAILS_TITLE;
         echo load_view('user', 'user/bankdetails', $data);
     }
+
     public function buy_coin()
     {
         $file = $this->request->getFile('screenshot');

@@ -16,5 +16,5 @@ define('IMG_DIR','uploads/');
 define('IMG_DIR_LINK', BASE_URL.'/uploads/');
 define('ASSETS_DIR_LINK', BASE_URL.'/assets/');
 define('ASSETS_FOLDER', BASE_URL.'/assets/');
-define('APP_NAME','P247');
+define('APP_NAME','BIGGROW');
 ?>

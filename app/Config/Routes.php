@@ -9,14 +9,9 @@ $routes->get('health-check', function() {
     echo "Api working successfully";
 });
 //* user route
-$routes->add('/play-store', 'Login_c::play_store');
-$routes->add('/mh/play-store', 'Login_c::play_store_mh');
-$routes->add('/redirect-play-store', 'Login_c::redirect_play_store');
-$routes->add('/mh/redirect-play-store', 'Login_c::redirect_play_store_mh');
 $routes->add('/', 'Login_c::home');
 $routes->add('/login', 'Login_c::login');
 $routes->add('logout', 'Login_c::logout');
-$routes->add('imb-webhook', 'Login_c::imb_webhook');
 $routes->add('change-password', 'Login_c::change_pwd');
 $routes->add('verify-otp/(:num)', 'Login_c::verify_otp/$1');
 $routes->add('change-forgot-password/(:any)', 'Login_c::change_frgt_pwd/$1');

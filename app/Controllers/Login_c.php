@@ -7,7 +7,6 @@ use App\Models\User_m;
 use CodeIgniter\Cookie\Cookie;
 use CodeIgniter\Cookie\CookieStore;
 use Config\Services;
-use App\Libraries\S3Uploader;
 
 class Login_c extends BaseController
 {
@@ -34,80 +33,6 @@ class Login_c extends BaseController
         }
     }
 
-    public function update_market_date()
-    {
-        $this->Login_m->update_market_date_stauts();
-    }
-    function daily_user_track() {
-        $this->Login_m->update_daily_user_track();
-    }
-
-    public function yantra_auto_result($game_name = '')
-    {
-        // $currentMinute = (int) date('i');        
-        // if (($currentMinute % 3 === 0 && $game_name == 'game70s') || $game_name == 'game130s') {                    
-            $id = $this->Login_m->yantra_auto_result($game_name);
-            if(!empty($id)){                
-                if (!file_exists(IMG_DIR . $game_name)) {                       
-                    if (mkdir(IMG_DIR . $game_name)) {
-                    }
-                }
-                $folderPath = $filePath = IMG_DIR . $game_name . '/';
-                $fileName = $id.'.txt';                    
-                $filePath = $folderPath . $fileName;
-                $file = fopen($filePath, 'w');
-                fclose($file);
-            } 
-        // }       
-    }
-    public function check_game_file($game_name = '', $game_id = 0)
-    {
-        header('Content-Type: text/event-stream');
-        header('Cache-Control: no-cache');
-        $filePath = IMG_DIR . $game_name . '/' . $game_id . '.txt';
-        if (is_file($filePath) || file_exists($filePath)) {
-            echo "data: {\"success\": \"1\"}\n\n";
-        } else {
-            echo "data: {\"success\": \"0\"}\n\n";
-        }
-        ob_flush();
-        flush();
-        die;
-    }
-
-    public function play_store()
-    {
-        // $data['title'] = APP_NAME.' - Play Store';
-        // $data['num'] = 1;
-        // echo single_page('playstore', $data);                   
-        $cleanUrl = str_replace(['https://', 'http://'], '', REDIRECT_PLAY_STORE_LINK);
-        $intent = "intent://{$cleanUrl}#Intent;scheme=https;package=com.android.chrome;end";
-        header("Location: $intent");
-        exit;                
-    }
-    public function play_store_mh()
-    {
-        // $data['title'] = APP_NAME.' - Play Store';
-        // $data['num'] = 0;
-        // echo single_page('playstore', $data);
-        $cleanUrl = str_replace(['https://', 'http://'], '', REDIRECT_MH_PLAY_STORE_LINK);
-        $intent = "intent://{$cleanUrl}#Intent;scheme=https;package=com.android.chrome;end";
-        header("Location: $intent");
-        exit;
-    }
-
-    public function redirect_play_store()
-    {
-        $data['title'] = APP_NAME.' - Play Store';
-        $data['num'] = 1;
-        echo single_page('playstore', $data);
-    }
-    public function redirect_play_store_mh()
-    {
-        $data['title'] = APP_NAME.' - Play Store';
-        $data['num'] = 0;
-        echo single_page('playstore', $data);
-    }
     public function home()
     {
         $data['title'] = 'Home';
@@ -144,7 +69,6 @@ class Login_c extends BaseController
                 $result = $this->Login_m->login($_POST['username'], $_POST['password'], '');
                 if ($result) {
                     $uid = encrypt_decrypt_custom($_SESSION['user']['id']);
-                    // $cxrtosdta = encrypt_decrypt_custom($_SESSION['user']['phone']);                    
                     set_cookie('_xlozgqian', $uid, time() + (10 * 365 * 24 * 60 * 60), '', '/', '', true, true, 'None');
                     $params = [];
                     $devicedata = md5(uniqid(mt_rand(), true));                    
@@ -163,8 +87,7 @@ class Login_c extends BaseController
                 } else {
                     $result = $this->Login_m->login('', '', $user_id);
                 }
-                if ($result) {                    
-                    // $cxrtosdta = encrypt_decrypt_custom($_SESSION['user']['phone']);                    
+                if ($result) {
                     $uid = encrypt_decrypt_custom($_SESSION['user']['id']);                    
                     set_cookie('_xlozgqian', $uid, time() + (10 * 365 * 24 * 60 * 60), '', '/', '', true, true, 'None');                    
                     $params = [];                        
@@ -177,7 +100,6 @@ class Login_c extends BaseController
             }
         }
         $data['title'] = "Login";
-
         echo single_page('user/login', $data);
     }
 
@@ -287,6 +209,12 @@ class Login_c extends BaseController
                 $data['errors'] = $this->validation->getErrors();
             } else {
                 $url_refferal_code = $_POST['referral_code'] ?? $url_refferal_code;
+                $existing_code = $this->Login_m->get_table_data(['referral_code' => $url_refferal_code],'users');
+                if(empty($existing_code))
+                {
+                    successOrErrorMessage("Invalid Refferal code", 'error_toast');
+                    return redirect()->to(USER_SIGNUP_LINK . $url_refferal_code);
+                }
                 $result = $this->Login_m->exist_user($_POST['username']);
                 if (isset($result['phone']) && isset($result['otp_verify']) && $result['otp_verify'] == '1') {
                     successOrErrorMessage("Mobile number allready exist", 'error_toast');
@@ -301,9 +229,8 @@ class Login_c extends BaseController
                     }
                     else
                     {                        
-                        $otp = rand(1000, 9999);                                               
-                        send_otp($_POST['username'], $otp);
-                        send_otp_fast2($_POST['username'], $otp);
+                        $otp = rand(1000, 9999);                                                                       
+                        send_otp_renflair($_POST['username'], $otp);
                         $params = [];
                         $password = md5($_POST['password']);
                         $new_password = sha1($password);
@@ -330,8 +257,7 @@ class Login_c extends BaseController
                     $params['password'] = $new_password;                                                            
                     $params['actual_pwd'] = $_POST['password'];                                                            
                     $otp = rand(1000, 9999);
-                    send_otp($_POST['username'], $otp);
-                    send_otp_fast2($_POST['username'], $otp);
+                    send_otp_renflair($_POST['username'], $otp);
 
                     // generate uniqe alpa numeric referal code
                     $is_unique = false;
@@ -444,9 +370,8 @@ class Login_c extends BaseController
                     }
                     else
                     {
-                        $otp = rand(1000, 9999);                        
-                        send_otp($_POST['mobileno'], $otp);
-                        send_otp_fast2($_POST['mobileno'], $otp);
+                        $otp = rand(1000, 9999);
+                        send_otp_renflair($_POST['mobileno'], $otp);
                         $params = [];
                         $params['pwd_otp_code'] = $otp;
                         $params['pwd_date'] = date('Y-m-d');

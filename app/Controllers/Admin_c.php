@@ -7,9 +7,6 @@ use CodeIgniter\Cookie\Cookie;
 use CodeIgniter\Cookie\CookieStore;
 use Config\Services;
 
-use PhpOffice\PhpSpreadsheet\Spreadsheet;
-use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-use PhpOffice\PhpSpreadsheet\IOFactory;
 use App\Models\Login_m;
 class Admin_c extends BaseController
 {
@@ -17,8 +14,7 @@ class Admin_c extends BaseController
     protected $session;
     private $Admin_m;
     private $Datatable_m;
-    protected $validation;
-    private $Login_m;
+    protected $validation;    
     public function __construct()
     {
         $this->session = \Config\Services::session();
@@ -32,7 +28,6 @@ class Admin_c extends BaseController
         $this->validation = \Config\Services::validation();
         $this->Admin_m = new Admin_m();
         $this->Datatable_m = new Datatable_m();
-        $this->Login_m = new Login_m();
         $setting_info = $this->Admin_m->get_setting();
         $this->session->set($setting_info);
     }
@@ -40,7 +35,6 @@ class Admin_c extends BaseController
     public function index()
     {
         $data['title'] = ADMIN_DASHBOARD_TITLE;
-
         $data['earning_coin'] = $this->Admin_m->get_sum_amount('t_coin_request','earning_amount',['status' => '2'],1,0);
         $data['pending_earning_coin'] = $this->Admin_m->get_sum_amount('t_coin_request','earning_amount',['status' => '1'],1,0);
         $data['first_level_commission'] = $this->Admin_m->get_sum_amount('t_coin_request','level_1_commission',['status' => '2'],1,0);
@@ -49,8 +43,6 @@ class Admin_c extends BaseController
         $data['pending_second_level_commission'] = $this->Admin_m->get_sum_amount('t_coin_request','level_2_commission',['status' => '1'],1,0);
         $data['active_user_count'] = $this->Admin_m->get_sum_amount('users','id',['status' => 0],0,1);
         $data['inactive_user_count'] = $this->Admin_m->get_sum_amount('users','id',['status' => 1],0,1);
-
-
         echo load_view('admin', 'admin/dashboard', $data);
     }
 
