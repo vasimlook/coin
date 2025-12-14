@@ -97,3 +97,10 @@
 .active > .nk-menu-link, .nk-menu-item.active > .nk-menu-link .nk-menu-icon,.nk-menu-link:hover .nk-menu-icon{
     color:#fff;
 }
+
+.user-avatar{
+    background-color: #ffd166 !important;
+}
+.text-primary{
+    color: #ffd166 !important;
+}

@@ -10,14 +10,14 @@
                         </span>
                     </div>
                     <div class="user-info">
-                        <span class="lead-text text-white"><?php echo $_SESSION['user']['name']; ?></span>
-                        <span class="sub-text text-white">Mo:<?php echo $_SESSION['user']['phone']; ?></span>
+                        <span class="lead-text text-primary"><?php echo $_SESSION['user']['name']; ?></span>
+                        <span class="sub-text text-white"><?php echo $_SESSION['user']['phone']; ?></span>
                     </div>                            
                 </div>
             </a>
         </div>
         <div class="nk-menu-trigger">
-            <a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none text-white" data-target="sidebarMenu"><em class="icon ni ni-arrow-left"></em></a>
+            <a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none text-white" data-target="sidebarMenu"><em class="icon ni ni-arrow-left text-primary"></em></a>
             <a href="#" class="nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex text-white" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
         </div>
     </div><!-- .nk-sidebar-element -->
