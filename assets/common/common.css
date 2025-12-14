@@ -104,3 +104,79 @@
 .text-primary{
     color: #ffd166 !important;
 }
+
+/* Modal Background */
+.bet-modal{
+    background: linear-gradient(145deg,#140b2d,#1e103f);
+    border-radius:18px;
+    border:1px solid rgba(199,125,255,.4);
+    box-shadow:
+        0 0 30px rgba(157,78,221,.7),
+        inset 0 0 25px rgba(0,0,0,.6);
+    color:#fff;
+}
+
+/* Neon Title */
+.text-neon{
+    color:#c77dff;
+    text-shadow:0 0 10px rgba(199,125,255,.9);
+}
+
+/* Info Rows */
+.info-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 12px;
+    margin-bottom:8px;
+    border-radius:12px;
+    background:rgba(255,255,255,.06);
+    font-size:.9rem;
+}
+.info-row span{
+    opacity:.7;
+}
+.info-row strong{
+    color:#ffd166;
+    font-weight:600;
+    text-shadow:0 0 8px rgba(255,193,7,.6);
+}
+
+/* Input */
+.bet-input{
+    background:#0b061a;
+    border:1px solid rgba(199,125,255,.4);
+    color:#fff;
+}
+.bet-input:focus{
+    background:#0b061a;
+    color:#fff;
+    border-color:#c77dff;
+    box-shadow:0 0 10px rgba(199,125,255,.6);
+}
+
+/* Submit Button */
+.btn-bet{
+    background: linear-gradient(135deg,#ffd166,#ff8800);
+    border:none;
+    font-weight:700;
+    color:#000;
+    border-radius:14px;
+    padding:12px;
+    box-shadow:
+        0 0 18px rgba(255,193,7,.9),
+        inset 0 -3px 8px rgba(0,0,0,.4);
+}
+.btn-bet:hover{
+    transform:scale(1.03);
+}
+
+/* Mobile Optimization */
+@media(max-width:576px){
+    .modal-dialog{
+        margin:1rem;
+    }
+    .info-row{
+        font-size:.85rem;
+    }
+}
