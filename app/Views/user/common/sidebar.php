@@ -1,5 +1,5 @@
 <!-- sidebar @s -->
-<div class="nk-sidebar nk-sidebar-fixed" data-content="sidebarMenu">
+<div class="nk-sidebar is-dark nk-sidebar-fixed" data-content="sidebarMenu">
     <div class="nk-sidebar-element nk-sidebar-head bg-dark">
         <div class="nk-sidebar-brand">
             <a class="nk-profile-toggle border-0" href="<?php echo BASE_URL; ?>">                
