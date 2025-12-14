@@ -1,72 +1,74 @@
-<div class="modal" id="accountDetailModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Account Details</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="modal fade" id="accountDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm modal-md">
+        <div class="modal-content bet-modal">
+
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-neon">
+                    🪙 Account Details
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
+
             <div class="modal-body">
 
-                <div class="row">
+                <div class="info-row">
+                    <span>Account No</span>
+                    <strong id="acc_no">*****45891</strong>
+                </div>
 
-                    <div class="col-md-12 d-flex align-items-center">
-                        <label class="w-100 fw-bold me-2 mb-0">Account Number:</label>
-                        <p id="acc_no" class="form-control-plaintext"></p>
-                    </div>
+                <div class="info-row">
+                    <span>Bank</span>
+                    <strong id="bank_name">HDFC Bank</strong>
+                </div>
 
-                    <div class="col-md-12 d-flex align-items-center">
-                        <label class="w-100 fw-bold me-2 mb-0">Bank Name:</label>
-                        <p id="bank_name" class="form-control-plaintext"></p>
-                    </div>
+                <div class="info-row">
+                    <span>Holder</span>
+                    <strong id="bank_holder_name">Rahul Sharma</strong>
+                </div>
 
-                    <div class="col-md-12 d-flex align-items-center">
-                        <label class="w-100 fw-bold me-2 mb-0">Bank Holder Name:</label>
-                        <p id="bank_holder_name" class="form-control-plaintext"></p>
-                    </div>
+                <div class="info-row">
+                    <span>IFSC</span>
+                    <strong id="ifsc_code">HDFC0001234</strong>
+                </div>
 
-                    <div class="col-md-12 d-flex align-items-center">
-                        <label class="w-100 fw-bold me-2 mb-0">IFSC Code:</label>
-                        <p id="ifsc_code" class="form-control-plaintext"></p>
-                    </div>
+                <div class="info-row">
+                    <span>UPI</span>
+                    <strong id="upi_id">rahul@upi</strong>
+                </div>
 
-                    <div class="col-md-12 d-flex align-items-center">
-                        <label class="w-100 fw-bold me-2 mb-0">UPI ID:</label>
-                        <p id="upi_id" class="form-control-plaintext"></p>
-                    </div>
+                <div class="info-row">
+                    <span>PhonePe</span>
+                    <strong id="p_pay">rahul@mail.com</strong>
+                </div>
 
-                    <div class="col-md-12 d-flex align-items-center">
-                        <label class="w-100 fw-bold me-2 mb-0">Paypal ID:</label>
-                        <p id="p_pay" class="form-control-plaintext"></p>
-                    </div>
+                <div class="info-row">
+                    <span>GPay</span>
+                    <strong id="g_pay">rahul@gpay</strong>
+                </div>
 
-                    <div class="col-md-12 d-flex align-items-center">
-                        <label class="w-100 fw-bold me-2 mb-0">Google Pay ID:</label>
-                        <p id="g_pay" class="form-control-plaintext"></p>
-                    </div>
+                <div class="info-row">
+                    <span>Paytm</span>
+                    <strong id="paytm_pay">rahul@paytm</strong>
+                </div>
 
-                    <div class="col-md-12 d-flex align-items-center">
-                        <label class="w-100 fw-bold me-2 mb-0">Paytm Pay ID:</label>
-                        <p id="paytm_pay" class="form-control-plaintext"></p>
-                    </div>
-
-                    <input type="hidden" id="user_id">
-                    <input type="hidden" id="balance">
-
-                    <div class="col-12">
-                        <label class="fw-bold me-2 mb-0">Upload Screenshot After Payment:</label>
-                        <input type="file" class="form-control" id="screenshot_input" name="screenshot" required>
-                        <small id="screenshot_name" class="text-muted d-block mt-2"></small>
-                    </div>
-
+                <div class="mt-3">
+                    <label class="form-label text-light small fw-bold">
+                        📤 Upload Payment Screenshot
+                    </label>
+                    <input type="file" class="form-control bet-input" id="screenshot_input">
+                    <small id="screenshot_name" class="text-muted"></small>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Submit</button>
-                <button type="button" class="btn btn-secondary button-close" data-bs-dismiss="modal">Close</button>
+            <div class="modal-footer border-0">
+                <button class="btn btn-bet w-100">
+                    🚀 Submit Payment
+                </button>
             </div>
         </div>
     </div>
 </div>
+
+
 
 <script type="text/javascript">
     $(document).ready(function() {
