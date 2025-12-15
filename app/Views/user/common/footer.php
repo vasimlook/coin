@@ -17,5 +17,7 @@
  <!-- common javascript for all project -->
 <?php include(APPPATH . "Views/notify.php"); ?>
 <?php if ($title == USER_DASHBOARD_TITLE) { include(APPPATH . "Views/user/js/dashboard_js.php"); } ?>
+<?php if ($title == BUY_LIST_TITLE) { include(APPPATH . "Views/user/js/buy_history_js.php"); } ?>
+<?php if ($title == SELL_LIST_TITLE) { include(APPPATH . "Views/user/js/sell_history_js.php"); } ?>
 </body>
 </html>

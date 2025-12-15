@@ -111,6 +111,40 @@ class Datatable_m extends Model
                 $builder->where('DATE(t_coin_request.created_at) <=', $to_date);
             }
         }
+        if ($condition_name == 'coin_buy_list_ajax_user') {
+            $builder->select('t_coin_request.*,s.phone as seller_phone,s.name as seller_name');
+            $builder->join('users s', 's.id = t_coin_request.seller_id', 'left');
+
+            $builder->where('t_coin_request.buyer_id', $_SESSION['user']['id']);  
+            if(isset($_POST['status']) && $_POST['status'] != '')
+            {
+                $builder->where('t_coin_request.status', $_POST['status']);  
+            }
+            if(isset($_POST['from_date']) && !empty($_POST['from_date']) && isset($_POST['to_date']) && !empty($_POST['to_date']))
+            {
+                $from_date = date('Y-m-d', strtotime(@$_POST['from_date']));
+                $to_date = date('Y-m-d', strtotime(@$_POST['to_date']));
+                $builder->where('DATE(t_coin_request.created_at) >=', $from_date);
+                $builder->where('DATE(t_coin_request.created_at) <=', $to_date);
+            }
+        }
+        if ($condition_name == 'coin_sell_list_ajax_user') {
+            $builder->select('t_coin_request.*,b.phone as buyer_phone,b.name as buyer_name');
+            $builder->join('users b', 'b.id = t_coin_request.buyer_id', 'left');
+
+            $builder->where('t_coin_request.seller_id', $_SESSION['user']['id']);  
+            if(isset($_POST['status']) && $_POST['status'] != '')
+            {
+                $builder->where('t_coin_request.status', $_POST['status']);  
+            }
+            if(isset($_POST['from_date']) && !empty($_POST['from_date']) && isset($_POST['to_date']) && !empty($_POST['to_date']))
+            {
+                $from_date = date('Y-m-d', strtotime(@$_POST['from_date']));
+                $to_date = date('Y-m-d', strtotime(@$_POST['to_date']));
+                $builder->where('DATE(t_coin_request.created_at) >=', $from_date);
+                $builder->where('DATE(t_coin_request.created_at) <=', $to_date);
+            }
+        }
     }
     //* Datatable END
 }

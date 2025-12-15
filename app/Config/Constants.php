@@ -123,6 +123,10 @@ define('USER_VERIFY_OTP_LINK',BASE_URL.'/verify-otp/');
 define('USER_DASHBOARD_LINK',BASE_URL.'/dashboard-user');
 define('UPDATE_BANK_DETAILS_LINK',BASE_URL.'/update-bank');
 define('BUY_COIN',BASE_URL.'/buy-coin');
+define('BUY_HISTORY',BASE_URL.'/buy-history');
+define('SELL_HISTORY',BASE_URL.'/sell-history');
+define('BUY_HISTORY_AJAX',BASE_URL.'/buy-history-ajax');
+define('SELL_HISTORY_AJAX',BASE_URL.'/sell-history-ajax');
 
 //ADMIN LINK
 define('ADMIN_LOGIN_LINK',BASE_URL.'/admin-login');
@@ -147,6 +151,8 @@ define('MY_EARNING_TITLE', 'MY-EARNING');
 define('USER_LIST_TITLE', 'USER-LIST');
 define('BANK_DETAILS_TITLE', 'BANK DETAILS');
 define('BUY_COIN_TITLE', 'BUY-COIN');
+define('BUY_LIST_TITLE', 'BUY HISTORY LIST');
+define('SELL_LIST_TITLE', 'SELL HISTORY LIST');
 //ADMIN TITLE
 define('ADMIN_DASHBOARD_TITLE','Dashboard');
 define('ADMIN_USER_LIST_TITLE','User List');
@@ -163,6 +169,12 @@ define('REGISTER_CODE', 'XAB12A');
 
 //database
 if(DOMAIN == 'coin.test'){
+    define("DB_HOSTNAME",'localhost');
+    define("DB_USERNAME",'root');
+    define("DB_PASSWORD",'');
+    define("DATABASE",'coin');
+}
+if(DOMAIN == 'coin.artoon.in'){
     define("DB_HOSTNAME",'localhost');
     define("DB_USERNAME",'root');
     define("DB_PASSWORD",'');

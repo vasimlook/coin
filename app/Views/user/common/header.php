@@ -20,6 +20,64 @@
   <!-- datatable start css  -->
   <link href="<?php echo ASSETS_DIR_LINK; ?>central/datatable/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
   <link href="<?php echo ASSETS_DIR_LINK; ?>central/datatable/responsive.dataTables.min.css" rel="stylesheet" type="text/css">
+<style>
+.img-box {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.img-box img {
+    border-radius: 6px;
+}
+
+.view-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 8px 16px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    display: none;
+    cursor: pointer;
+}
+
+.img-box:hover .view-btn {
+    display: block;
+}
+
+.img-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    text-align: center;
+}
+
+.img-modal-content {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 8px;
+}
+
+.img-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+</style>
 </head>
 
 <body class="nk-body bg-lighter npc-default has-sidebar">

@@ -21,6 +21,10 @@ $routes->add('user-signup/registeration/(:any)', 'Login_c::signup/$1');
 $routes->add('dashboard-user', 'User_c::index');
 $routes->post('buy-coin', 'User_c::buy_coin');
 $routes->add('update-bank', 'User_c::bank_details');
+$routes->add('buy-history', 'User_c::buy_history');
+$routes->add('sell-history', 'User_c::sell_history');
+$routes->add('buy-history-ajax', 'User_c::buy_history_ajax');
+$routes->add('sell-history-ajax', 'User_c::sell_history_ajax');
 
 
 //* admin route

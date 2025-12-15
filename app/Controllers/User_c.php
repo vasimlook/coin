@@ -17,6 +17,7 @@ class User_c extends BaseController
     protected $session;
     private $User_m;
     private $Common_m;
+    private $Datatable_m;
     protected $validation;
 
     public function __construct()
@@ -32,6 +33,7 @@ class User_c extends BaseController
         sessionCheckUser();
         $this->User_m = new User_m();
         $this->Common_m = new Common_m();
+        $this->Datatable_m = new Datatable_m();
         $user_info = $this->User_m->get_user_info($_SESSION['user']['id']);
         $setting_info = $this->User_m->get_setting();
         $this->session->set($setting_info);
@@ -205,5 +207,92 @@ class User_c extends BaseController
             'status' => 'success',
             'message' => 'Screenshot uploaded successfully.'
         ]);
+    }
+    public function buy_history()
+    {
+        $data['title'] = BUY_LIST_TITLE;
+        echo load_view('user', 'user/buy_history_list', $data);
+    }
+    public function buy_history_ajax()
+    {
+        $table = 't_coin_request';
+        $list = $this->Datatable_m->get_datatables($table, [null, 't_coin_request.amount', 't_coin_request.screenshot', 't_coin_request.status', 't_coin_request.created_at', 's.phone', 's.name'], ['t_coin_request.amount', 't_coin_request.screenshot', 't_coin_request.status', 't_coin_request.created_at', 's.phone', 's.name'], ['t_coin_request.id' => 'desc'], 'coin_buy_list_ajax_user');
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $datarow) {
+            $status = "";
+            if ($datarow->status == 2) {
+                $status = '<span class="badge bg-success">Accepted</span>';
+            }
+            if ($datarow->status == 3) {
+                $status = '<span class="badge bg-danger">Rejected</span>';
+            }
+            if ($datarow->status == 1) {
+                $status = '<span class="badge bg-warning">Pending</span>';
+            }
+
+            $no++;
+            $row = array();
+            $row[] = $no;
+            $row[] = $datarow->seller_name;
+            $row[] = $datarow->seller_phone;
+            $row[] = "<div class='img-box'><img src='".BASE_URL."/uploads/screenshot/".$datarow->screenshot."' width='50' height='50' class='zoom-img' /> <button class='view-btn'>View</button> </div>";
+            $row[] = (!empty($_SESSION['earning_pr'])) ? $datarow->amount + (($datarow->amount/100)*$_SESSION['earning_pr']):$datarow->amount;
+            $row[] = date('d-M h:i A', strtotime($datarow->created_at));                       
+            $row[] = $status;
+            $data[] = $row;
+        }
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->Datatable_m->count_all($table),
+            "recordsFiltered" => $this->Datatable_m->count_filtered($table, [null, 't_coin_request.amount', 't_coin_request.screenshot', 't_coin_request.status', 't_coin_request.created_at', 's.phone', 's.name'], ['t_coin_request.amount', 't_coin_request.screenshot', 't_coin_request.status', 't_coin_request.created_at', 's.phone', 's.name'], ['t_coin_request.id' => 'desc'], 'coin_buy_list_ajax_user'),
+            "data" => $data,
+            "csrf" => csrf_hash(),
+        );
+        echo json_encode($output);
+    }
+    public function sell_history()
+    {
+        $data['title'] = SELL_LIST_TITLE;
+        echo load_view('user', 'user/sell_history_list', $data);
+    }
+    public function sell_history_ajax()
+    {
+        $table = 't_coin_request';
+        $list = $this->Datatable_m->get_datatables($table, [null, 't_coin_request.amount', 't_coin_request.screenshot', 't_coin_request.status', 't_coin_request.created_at', 'b.phone', 'b.name'], ['t_coin_request.amount', 't_coin_request.screenshot', 't_coin_request.status', 't_coin_request.created_at', 'b.phone', 'b.name'], ['t_coin_request.id' => 'desc'], 'coin_sell_list_ajax_user');
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $datarow) {
+            $status = "";
+            $action = "";
+            if ($datarow->status == 2) {
+                $status = '<span class="badge bg-success">Accepted</span>';
+            }
+            if ($datarow->status == 3) {
+                $status = '<span class="badge bg-danger">Rejected</span>';
+            }
+            if ($datarow->status == 1) {
+                $status = '<span class="badge bg-warning">Pending</span>';
+            }
+
+            $no++;
+            $row = array();
+            $row[] = $no;
+            $row[] = $datarow->buyer_name;
+            $row[] = $datarow->buyer_phone;
+            $row[] = "<div class='img-box'><img src='".BASE_URL."/uploads/screenshot/".$datarow->screenshot."' width='50' height='50' class='zoom-img' /> <button class='view-btn'>View</button> </div>";
+            $row[] = (!empty($_SESSION['earning_pr'])) ? $datarow->amount + (($datarow->amount/100)*$_SESSION['earning_pr']):$datarow->amount;
+            $row[] = date('d-M h:i A', strtotime($datarow->created_at));                       
+            $row[] = $status;
+            $data[] = $row;
+        }
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->Datatable_m->count_all($table),
+            "recordsFiltered" => $this->Datatable_m->count_filtered($table, [null, 't_coin_request.amount', 't_coin_request.screenshot', 't_coin_request.status', 't_coin_request.created_at', 'b.phone', 'b.name'], ['t_coin_request.amount', 't_coin_request.screenshot', 't_coin_request.status', 't_coin_request.created_at', 'b.phone', 'b.name'], ['t_coin_request.id' => 'desc'], 'coin_sell_list_ajax_user'),
+            "data" => $data,
+            "csrf" => csrf_hash(),
+        );
+        echo json_encode($output);
     }
 }
