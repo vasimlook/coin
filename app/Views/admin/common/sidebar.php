@@ -1,5 +1,5 @@
 <!-- sidebar @s -->
-<div class="nk-sidebar nk-sidebar-fixed" data-content="sidebarMenu">
+<div class="nk-sidebar is-dark nk-sidebar-fixed" data-content="sidebarMenu">
     <div class="nk-sidebar-element nk-sidebar-head">
         <div class="nk-sidebar-brand">
             <a href="<?php echo ADMIN_DASHBOARD_LINK; ?>" class="logo-link nk-sidebar-logo">
