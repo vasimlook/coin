@@ -167,9 +167,6 @@ class Login_c extends BaseController
 
     public function signup($url_refferal_code = 0)
     {
-        if(DOMAIN == 'make10x.games'){
-            echo 'Under Maintenance';die;
-        }
         helper('form');
         if (isset($_POST['username'])) {
             $this->validation->setRules([
@@ -222,13 +219,13 @@ class Login_c extends BaseController
                 }
                 else if (isset($result['phone']) && isset($result['otp_verify']) && $result['otp_verify'] == '0')
                 {
-                    if(date('Y-m-d') == $result['otp_date'] && $result['otp_count'] >= 3)
-                    {
-                        successOrErrorMessage("OTP Limit Over.", 'error_toast');
-                        return redirect()->to(USER_SIGNUP_LINK . $url_refferal_code);
-                    }
-                    else
-                    {                        
+                    // if(date('Y-m-d') == $result['otp_date'] && $result['otp_count'] >= 3)
+                    // {
+                    //     successOrErrorMessage("OTP Limit Over.", 'error_toast');
+                    //     return redirect()->to(USER_SIGNUP_LINK . $url_refferal_code);
+                    // }
+                    // else
+                    // {                        
                         $otp = rand(1000, 9999);                                                                       
                         send_otp_renflair($_POST['username'], $otp);
                         $params = [];
@@ -244,7 +241,7 @@ class Login_c extends BaseController
                             successOrErrorMessage("Registration success Please verify OTP", 'success_toast');
                             return redirect()->to(USER_VERIFY_OTP_LINK.$_POST['username']);
                         }
-                    }
+                    // }
                 }
                 else {
                     $password = md5($_POST['password']);
