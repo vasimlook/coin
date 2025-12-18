@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="modal-footer border-0">
-                <button class="btn btn-bet w-100">
+                <button type="button" class="btn btn-bet w-100">
                     🚀 Submit Payment
                 </button>
             </div>
