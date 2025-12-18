@@ -44,13 +44,13 @@
                         </div>
                     </div>
                     <div class="card bg-transparent">
-                        <div class="card-inner pt-0">
+                        <div class="card-inner pt-2">
                             <div class="row">
                                 <div class="col-6">
-                                    <a href="<?php echo BUY_HISTORY ?>" class="btn btn-sm btn-block bg-success text-dark mb-1">Buy History</a>
+                                    <a href="<?php echo BUY_HISTORY ?>" class="btn btn-sm btn-block bg-success text-dark mb-1">🚀 Buy History</a>
                                 </div>
                                 <div class="col-6">
-                                    <a href="<?php echo SELL_HISTORY ?>" class="btn btn-sm btn-block bg-orange text-dark mb-1">Sell History</a>
+                                    <a href="<?php echo SELL_HISTORY ?>" class="btn btn-sm btn-block bg-orange text-dark mb-1">🚀 Sell History</a>
                                 </div>
                                 <?php
                                 foreach ($allUser as $key => $value) {

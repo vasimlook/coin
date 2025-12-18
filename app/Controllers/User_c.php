@@ -234,7 +234,7 @@ class User_c extends BaseController
             $row = array();
             $row[] = $no;
             $row[] = $datarow->seller_name;
-            $row[] = $datarow->seller_phone;
+            $row[] = str_repeat('*', strlen($datarow->seller_phone) - 5) . substr($datarow->seller_phone, -5);
             $row[] = "<div class='img-box'><img src='".BASE_URL."/uploads/screenshot/".$datarow->screenshot."' width='50' height='50' class='zoom-img' /> <button class='view-btn'>View</button> </div>";
             $row[] = (!empty($_SESSION['earning_pr'])) ? $datarow->amount + (($datarow->amount/100)*$_SESSION['earning_pr']):$datarow->amount;
             $row[] = date('d-M h:i A', strtotime($datarow->created_at));                       
@@ -278,7 +278,7 @@ class User_c extends BaseController
             $row = array();
             $row[] = $no;
             $row[] = $datarow->buyer_name;
-            $row[] = $datarow->buyer_phone;
+            $row[] = str_repeat('*', strlen($datarow->buyer_phone) - 5) . substr($datarow->buyer_phone, -5);
             $row[] = "<div class='img-box'><img src='".BASE_URL."/uploads/screenshot/".$datarow->screenshot."' width='50' height='50' class='zoom-img' /> <button class='view-btn'>View</button> </div>";
             $row[] = (!empty($_SESSION['earning_pr'])) ? $datarow->amount + (($datarow->amount/100)*$_SESSION['earning_pr']):$datarow->amount;
             $row[] = date('d-M h:i A', strtotime($datarow->created_at));                       
