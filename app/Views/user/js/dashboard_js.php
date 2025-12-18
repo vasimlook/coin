@@ -51,6 +51,9 @@
                     <strong id="paytm_pay">rahul@paytm</strong>
                 </div>
 
+                <input type="hidden" id="user_id">
+                <input type="hidden" id="balance">
+
                 <div class="mt-3">
                     <label class="form-label text-light small fw-bold">
                         📤 Upload Payment Screenshot
@@ -60,7 +63,7 @@
                 </div>
             </div>
             <div class="modal-footer border-0">
-                <button type="button" class="btn btn-bet w-100">
+                <button type="button" class="btn btn-bet w-100" id='submitPayment'>
                     🚀 Submit Payment
                 </button>
             </div>
@@ -99,7 +102,7 @@
         });
 
         // Bind footer submit button to perform the upload when clicked
-        $('.modal-footer .btn-primary').off('click.uploadScreenshot').on('click.uploadScreenshot', function(e) {
+        $('.modal-footer #submitPayment').off('click.uploadScreenshot').on('click.uploadScreenshot', function(e) {
             if (!selectedFile) {
                 alert('Please select a screenshot to upload.');
                 return;
