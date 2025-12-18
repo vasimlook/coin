@@ -7,10 +7,14 @@
                         <div class="gamble-board">
                             <!-- TOTAL -->
                             <div class="total-box p-4 mb-3">
+                                <small class="text-uppercase text-light opacity-75">Balance</small>
+                                <h1 class="fw-bold text-gold"><?php echo $_SESSION['balance']; ?></h1>
+                            </div>
+                            <!-- GRID -->
+                            <div class="total-box p-4 mb-3">
                                 <small class="text-uppercase text-light opacity-75">Total Earning</small>
                                 <h1 class="fw-bold text-gold"><?php echo ($earning_coin != '') ? $earning_coin : 0; ?></h1>
                             </div>
-                            <!-- GRID -->
                             <div class="row g-3">
                                 <div class="col-6">
                                     <div class="stat-box">
