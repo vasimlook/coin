@@ -42,8 +42,6 @@ class User_c extends BaseController
             }
             $user_data = sessionUser($user_info);
             $this->session->set($user_data);
-        } else {
-            $_SESSION['balance'] = formatToTwoDecimalPlaces(0);
         }
     }
     
