@@ -122,12 +122,13 @@
                 processData: false,
                 success: function(response) {
                     if (response.status === 'success') {
-                        NioApp.Toast(response.message, 'success', {
-                            position: 'top-center',
-                            timeOut: 5000,
-                            showDuration: 300
-                        });
-                        $('#accountDetailModal').modal('hide');
+                        location.reload(true);
+                        // NioApp.Toast(response.message, 'success', {
+                        //     position: 'top-center',
+                        //     timeOut: 5000,
+                        //     showDuration: 300
+                        // });
+                        // $('#accountDetailModal').modal('hide');
                     } else {
                         NioApp.Toast(response.message, 'error', {
                             position: 'top-center',
