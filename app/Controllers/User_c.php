@@ -201,6 +201,7 @@ class User_c extends BaseController
 
         $this->Common_m->update_wallet($sellerID, $amount, 0, 'balance');
 
+        successOrErrorMessage("Payment submitted successfully.", 'success_toast');
         return $this->response->setJSON([
             'status' => 'success',
             'message' => 'Screenshot uploaded successfully.'
