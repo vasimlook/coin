@@ -8,7 +8,7 @@
                             <!-- TOTAL -->
                             <div class="total-box p-4 mb-3">
                                 <small class="text-uppercase text-light opacity-75">Balance</small>
-                                <h1 class="fw-bold text-gold"><?php echo $_SESSION['balance']; ?></h1>
+                                <h1 class="fw-bold text-gold"><?php echo $_SESSION['user']['balance']; ?></h1>
                             </div>
                             <!-- GRID -->
                             <div class="total-box p-4 mb-3">
