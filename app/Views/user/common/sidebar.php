@@ -38,6 +38,18 @@
                         </a>
                     </li>
                     <li class="nk-menu-item">
+                        <a href="<?php echo BUY_HISTORY; ?>" class="nk-menu-link">
+                            <span class="nk-menu-icon text-orange-tbg"><em class="icon ni ni-cart"></em></span>
+                            <span class="nk-menu-text text-light-skyblue-tbg">Buy History</span>
+                        </a>
+                    </li>
+                    <li class="nk-menu-item">
+                        <a href="<?php echo SELL_HISTORY; ?>" class="nk-menu-link">
+                            <span class="nk-menu-icon text-orange-tbg"><em class="icon ni ni-money"></em></span>
+                            <span class="nk-menu-text text-light-skyblue-tbg">Sell History</span>
+                        </a>
+                    </li>
+                    <li class="nk-menu-item">
                         <a href="<?php echo USER_CHANGE_PWD_LINK; ?>" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-lock"></em></span>
                             <span class="nk-menu-text">Change Password</span>
